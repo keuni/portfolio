@@ -1,16 +1,16 @@
 .App {
   text-align: center;
-  font-family: 'Baloo Paaji 2', cursive, 'Roboto', sans-serif;
-  background-color: #272625;
+  font-family: 'Baloo Paaji 2', cursive, 'Noto Sans KR', sans-serif, 'Roboto', sans-serif;
   color: white;
-  transition: all .2s ease-in;
+  background-color: #272625;
   height: auto;
+  /* transition: all .2s ease-in; */
 }
 
 .Menu {
   text-align: center;
   height: 6vh;
-  padding-top: 2vw
+  padding-top: 2vw;
 }
 
 .Menus {
@@ -19,7 +19,7 @@
   width: 150px;
   line-height: 4vh; 
   display: inline-block;
-  transition: all .2s ease-in;
+  /* transition: all .2s ease-in; */
   border-bottom: 2px solid rgba(255, 255, 255, 0);
   letter-spacing: 0px;
 }
@@ -27,71 +27,92 @@
 .Appmain {
   height: 65vh;
   width: 100%;
+  /* transition: all .2s ease-in; */
 }
 
 .Footer {
   font-family: 'Satisfy', cursive;
   height: 40px;
+  /* transition: all .2s ease-in; */
 }
 
 .Message {
   text-align: left;
   height: 20vh;
-  color: rgb(254, 182, 28);
+  color: rgb(253, 214, 128);
   padding: 10px 20px;
-  transition: all .2s ease-in;
-  font-family: 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: bold;
-}
-
-.box1 {
-  display: block;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
+  /* transition: all .2s ease-in; */
 }
 
 .write {
-  width: 55vw; 
+  width: 57vw; 
   position: relative;
   margin-left: auto;
   margin-right: auto;
 }
 
+.box1 {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-weight: lighter;
+  font-family: 'Baloo Paaji 2', cursive, 'Roboto', sans-serif;
+  padding-left: auto;
+  padding-right: auto;
+}
+
 .writer{
-  width: 20vw; 
+  width: 8vw; 
   height: 25px; 
-  margin-right: 0.5vw;
+  margin-right: 3vw;
 }
 
 .email{
-  width: 30.6vw;
+  width: 30vw;
   height: 25px;
+  right:0;
 }
 
 .Text{
-  width: 51.5vw; 
-  height: 40px; 
-  margin-right: 5px;
+  width: 56.4vw; 
+  height: 40px;
 }
 
 ::placeholder {
   font-family: 'Baloo Paaji 2', cursive, 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 input[type="text"] {
-  font-size:20px;
+  color: white;
+  background-color: rgba(255, 248, 220, 0);
+  padding-left:5px;
+  font-size:15px;
+  border: none;
+  border-bottom:solid 1px white;
 }
 input[type="textarea"] {
-  font-size:20px;
+  padding-left: 5px;
+  font-size:15px;
+  border-top-width:0px; border-bottom-width:0px; border-left-width:0px; border-right-width:0px;
+  background-color: rgb(235, 230, 213);
 }
 
 #submit {
   margin-top: 1vh;
+  height: 30px;
+  border-radius: 10px; 
   font-size: 18px;
-  background-color: wheat;
+  background-color: rgb(250, 186, 68);
+  border: none;
   position: absolute;
-  right: 3vw;
+  right: 0;
+  font-family: 'Baloo Paaji 2', cursive, 'Roboto', sans-serif;
+  outline:none;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .myModal {
@@ -150,9 +171,10 @@ a {
   color: inherit;
 }
 
-.Menus:hover {
+.mainMenus:hover {
   letter-spacing: 2px;
   border-bottom: 2px solid #ff5f2e;
+  transition: all .2s ease-in;
 }
 
 .Home {
@@ -210,8 +232,32 @@ a {
     padding-top: 10vh;
   }
   .Setting:hover {
-    letter-spacing: 2px;
-    border-bottom: 1px solid rgba(146, 144, 144, 0); 
+    border-bottom: 1px solid #ff5f2e00;
+  }
+
+  .write {
+    width: 70vw; 
+  }
+
+  .Text{
+    width: 69vw; 
+    height: 40px;
+  }
+  .write {
+    font-size: 15px;
+  }
+  ::placeholder {
+    font-size: 15px;
+  }
+  input[type="text"] {
+    font-size:13px;
+  }
+  input[type="textarea"] {
+    font-size:13px;
+  }
+  #submit {
+    height: 25px;
+    font-size: 13px;
   }
 }
 
@@ -234,34 +280,27 @@ a {
   #x {
     font-size: 15px;
   }
-  .Setting:hover {
-    letter-spacing: 3px;
-    border-bottom: 1px solid rgba(146, 144, 144, 0); 
-  }
-  .Menus.Setting {
-    font-size: 25px;
-    line-height: 3vh; 
-  }
 }
 
 .name {
   color: rgb(250, 190, 98);
   text-decoration: underline;
-  background-color: #272625;
-}
-
-.Colormode {
-  background-color: #fccc65;
-  color: black;
   transition: all .2s ease-in;
 }
 
+.Colormode {
+  color: black;
+  transition: all-color .2s ease-in;
+}
+
 .MenuColormode {
+  background-color: #fccc65;
   color: #34314c;
   transition: all .2s ease-in;
 }
 
 .AppmainColormode {
+  background-color: #fccc65;
   transition: all .2s ease-in;
 }
 
@@ -271,10 +310,89 @@ a {
   transition: all .2s ease-in;
 }
 
+.FooterColormode {
+  font-family: 'Satisfy', cursive;
+  height: 40px;
+  color: white;
+  background-color: #d45656;
+  transition: all .2s ease-in;
+}
+
+.nameColormode {
+  color: rgb(250, 190, 98);
+  text-decoration: underline;
+  background-color: #050505;
+  transition: all .2s ease-in;
+}
+
 .aboutme {
   padding-top: 15vh;
 }
 
 .portfolio {
   padding-top: 15vh;
+}
+
+input:focus {
+  outline:none;
+}
+
+/* sliders */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(252, 109, 44);
+}
+
+/* input:focus + .slider {
+  box-shadow: 0 0 1px rgb(252, 109, 44);
+} */
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

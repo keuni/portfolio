@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = (props) => {
   return(
-    <div className="Footer">Thank you</div>
+    <div className={props.ColorMode ? 'Footer FooterColormode' : 'Footer'}>
+      Thank you
+    </div>
   )
 }
 

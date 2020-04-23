@@ -1,11 +1,9 @@
 import React from 'react';
 
-function Aboutme() {
+function Aboutme(props) {
     return(
-      <div className="Appmain">
-        <div className="aboutme">
-          <div>About me desc....blablabla</div>
-        </div>
+      <div className="aboutme">
+        <div>About me desc....blablabla</div>
       </div>
     )
   }

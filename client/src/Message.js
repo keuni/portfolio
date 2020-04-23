@@ -15,9 +15,10 @@ class Message extends React.Component {
     let Nname = document.querySelector('.writer').value;
     let Nemail = document.querySelector('.email').value;
     let Ntext = document.querySelector('.Text').value;
-    if(Nemail.indexOf('@') === -1) {
-      alert('이메일을 확인해주세요')
+    if(Nemail.indexOf('@') === -1 & Nemail.indexOf('.') === -1) {
+      this.props.handleModal()
     } else {
+      localStorage.setItem(Nname, "메일"+Nemail+" 내용:"+Ntext);
       this.setState({
         name: Nname,
         email: Nemail,
@@ -40,12 +41,12 @@ class Message extends React.Component {
   }
   render() {
     return (
-      <div className="Message">
+      <div className={this.props.ColorMode ? 'Message MessageColormode' : 'Message'}>
         <div className="write">
           <div>메시지를 남겨주세요</div>
           <div className="box1">
-            <input type="text" className="writer" placeholder="name"></input>
-            <input type="text" className="email" placeholder="email"></input>
+            name : <input type="text" className="writer" ></input>
+            email : <input type="text" className="email" ></input>
           </div>
             <input type="textarea" className="Text" placeholder="write a message"></input>
             <div><button id="submit" onClick={this.sendMsg}>submit</button></div>

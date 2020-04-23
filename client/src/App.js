@@ -14,31 +14,25 @@ class App extends React.Component {
     }
     this.handleMode = this.handleMode.bind(this);
     this.handleModal = this.handleModal.bind(this);
-    this.handleColorMode = this.handleColorMode.bind(this);
   }
-  handleMode(props) {
+  handleMode() {
     this.setState({
-      ColorMode: props
+      ColorMode: !this.state.ColorMode
     })
   }
   handleModal() {
     document.querySelector('.myModal').classList.toggle('displayMyModal')
   }
-  handleColorMode () {
-    document.querySelector('.Menu').classList.toggle('MenuColormode');
-    document.querySelector('.Appmain').classList.toggle('AppmainColormode');
-    document.querySelector('.Message').classList.toggle('MessageColormode');
-  }
   render() {
     return (
-      <div className={this.state.ColorMode ? 'App Colormode' : 'App lightmode'} >
-        <Modal handleMode={this.handleMode} handleModal={this.handleModal} handleColorMode={this.handleColorMode} />
+      <div className={this.state.ColorMode ? 'App Colormode' : 'App'} >
+        <Modal handleModal={this.handleModal} />
         <div>
-          <Nav handleModal={this.handleModal} />
+          <Nav handleMode={this.handleMode} ColorMode={this.state.ColorMode} />
         </div>
         <div>
-          <Message />
-          <Footer />
+          <Message ColorMode={this.state.ColorMode} handleModal={this.handleModal} />
+          <Footer ColorMode={this.state.ColorMode}/>
         </div>
       </div>
     );

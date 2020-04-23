@@ -4,7 +4,7 @@ import Menu from './Menu';
 function Nav(props) {
   return (
     <nav className="Nav">
-        <Menu handleModal={props.handleModal} ColorMode={props.ColorMode}/>
+        <Menu ColorMode={props.ColorMode} handleMode={props.handleMode} />
     </nav> 
   )
 };

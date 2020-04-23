@@ -13,7 +13,7 @@ function Menu(props) {
   return (
     <Fragment>
       <Router>      
-        <div className="Menu">
+        <div className={props.ColorMode ? 'Menu MenuColormode' : 'Menu'}>
           <div className="Menus mainMenus">
             <Link to="/">Home</Link>
           </div>
@@ -23,21 +23,26 @@ function Menu(props) {
           <div className="Menus mainMenus">
             <Link to="/portfolio">Portfolio</Link>
           </div>
-          <div className="Menus Setting" onClick={props.handleModal}>
-          <span id="settingLetter">Setting</span>
+          <div className="Menus Setting">
+            <label class="switch">
+              <input class="box" type="checkbox" onClick={props.handleMode}></input>
+              <span class="slider round"></span>
+            </label>
           </div>
         </div>
+        <div className={props.ColorMode ? 'Appmain AppmainColormode' : 'Appmain'}>
           <Switch>
-            <Route path="/Aboutme">
-              <Aboutme />
-            </Route>
-            <Route path="/portfolio">
-              <Portfolio />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+              <Route path="/Aboutme">
+                <Aboutme ColorMode={props.ColorMode} />
+              </Route>
+              <Route path="/portfolio">
+                <Portfolio ColorMode={props.ColorMode} />
+              </Route>
+              <Route path="/">
+                <Home ColorMode={props.ColorMode} />
+              </Route>
           </Switch>
+        </div>
       </Router>
     </Fragment>
   )
