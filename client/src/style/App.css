@@ -124,18 +124,18 @@ button:hover {
 }
 
 .modal_overlay {
-  background-color: rgba(0, 0, 0, 0.411);
+  background-color: rgba(0, 0, 0, 0.582);
   width: 100%;
   height: 100%;
 }
 
 .modal_content {
   width: 30%;
-  height: 7vh;
+  height: 5vh;
   display: inline-block;
   background-color: white;
-  margin-top: 8vh;
-  padding-top: 3vh;
+  margin-top: 43vh;
+  padding-top: 2vh;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   color: black;
@@ -145,15 +145,6 @@ button:hover {
 
 .displayMyModal {
   display: none;
-}
-
-#checkbox {
-  margin-top: 5px;
-}
-
-#box {
-  -webkit-transform: scale(1.5);
-  margin-right:10px;
 }
 
 #x {

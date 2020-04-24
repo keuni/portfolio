@@ -15,7 +15,7 @@ class Message extends React.Component {
     let Nname = document.querySelector('.writer').value;
     let Nemail = document.querySelector('.email').value;
     let Ntext = document.querySelector('.Text').value;
-    if(Nemail.indexOf('@') === -1 & Nemail.indexOf('.') === -1) {
+    if(Nemail.indexOf('@') === -1 || Nemail.indexOf('.') === -1) {
       this.props.handleModal()
     } else {
       localStorage.setItem(Nname, "메일"+Nemail+" 내용:"+Ntext);

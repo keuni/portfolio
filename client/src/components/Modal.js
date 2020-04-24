@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Modal = (props) => {
-  console.log(props.handleModal);
   return (
     <div>
       <div className="myModal displayMyModal">
