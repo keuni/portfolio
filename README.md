@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-**Tech Stack**   
+* **Tech Stack**   
 React, JS, Express
 
 
