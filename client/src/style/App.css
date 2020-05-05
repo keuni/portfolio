@@ -4,7 +4,6 @@
   color: white;
   background-color: #272625;
   height: auto;
-  /* transition: all .2s ease-in; */
 }
 
 .Menu {
@@ -25,6 +24,7 @@
 }
 
 .Appmain {
+  font-family: 'Do Hyeon', sans-serif;
   height: 65vh;
   width: 100%;
   transition: all .2s ease-in;
@@ -168,13 +168,9 @@ a {
   transition: all .2s ease-in;
 }
 
-.Home {
-  text-align: center;
-  font-size: 50px;
-  font-family: 'Do Hyeon', sans-serif;
-  line-height: 65px;
-  padding-top: 15vh;
-  padding: 15vh 10vw;
+.menuOnClick {
+  letter-spacing: 2px;
+  color:#ff5f2e;
 }
 
 @media screen and (max-height: 750px) {
@@ -216,11 +212,6 @@ a {
   }
   #x {
     font-size: 10px;
-  }
-  .Home {
-    font-size: 35px;
-    line-height: 45px;
-    padding-top: 10vh;
   }
   .Setting:hover {
     border-bottom: 1px solid #ff5f2e00;
@@ -314,10 +305,6 @@ a {
   text-decoration: underline;
   background-color: #050505;
   transition: all .2s ease-in;
-}
-
-.aboutme {
-  padding-top: 15vh;
 }
 
 .portfolio {

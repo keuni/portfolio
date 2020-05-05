@@ -1,0 +1,72 @@
+.portfolio {
+  font-size: 20px;
+  font-weight: lighter;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.skills {
+  width: 80px;
+  transform: translateY(-130%);
+}
+
+.skillBox {
+  width: 800px;
+  border: white solid 1px;
+  display: inline-block;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+
+.maintext {
+  font-size: 50px;
+  color: red;
+  margin-top: 2vh;
+}
+
+img {
+  display: inline-block;
+  height: 70px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .skillBox {
+    width: 600px;
+  }
+  img {
+    display: inline-block;
+    height: 50px;
+    margin: 0 5px;
+  }
+}
+
+
+@media screen and (max-width: 650px),(max-height: 400px) { 
+  .skillBox {
+    width: 80vw;
+    padding-top: 5px;
+  }
+  .skills {
+    font-size: 15px;
+    width: 70px;
+  }
+  img {
+    display: inline-block;
+    height: 30px;
+  }
+  .maintext {
+    font-size: 30px;
+    color: red;
+    margin-top: 2vh;
+  }
+}
+
+.portfolioColormode {
+  color: black;
+}
+
+.skillBoxColormode {
+  border: black solid 1px;
+}

@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "copy": "cp -r build/ ../server/public"
+    "copy": "cp -r build/ ../server/public",
+    "lint": "eslint ./src/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
   }
 }

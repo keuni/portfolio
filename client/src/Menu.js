@@ -1,51 +1,65 @@
 import React, { Fragment } from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+    Switch,Route,Link
   } from "react-router-dom";
 import Home from "./Appmain/Home"
 import Aboutme from "./Appmain/Aboutme"
 import Portfolio from "./Appmain/Portfolio"
 
-function Menu(props) {
-  return (
-    <Fragment>
-      <Router>      
-        <div className={props.ColorMode ? 'Menu MenuColormode' : 'Menu'}>
-          <div className="Menus mainMenus">
-            <Link to="/">Home</Link>
-          </div>
-          <div className="Menus mainMenus">
-            <Link to="/Aboutme">About me</Link>
-          </div>
-          <div className="Menus mainMenus">
-            <Link to="/portfolio">Portfolio</Link>
-          </div>
-          <div className="Menus Setting">
-            <label class="switch">
-              <input class="box" type="checkbox" onClick={props.handleMode}></input>
-              <span class="slider round"></span>
-            </label>
-          </div>
-        </div>
-        <div className={props.ColorMode ? 'Appmain AppmainColormode' : 'Appmain'}>
-          <Switch>
-              <Route path="/Aboutme">
-                <Aboutme ColorMode={props.ColorMode} />
-              </Route>
-              <Route path="/portfolio">
-                <Portfolio ColorMode={props.ColorMode} />
-              </Route>
-              <Route path="/">
-                <Home ColorMode={props.ColorMode} />
-              </Route>
-          </Switch>
-        </div>
-      </Router>
-    </Fragment>
-  )
-};
+export default class Menu extends React.Component {
+  constructor(props) {
+    super(props)
 
-export default Menu;
+    this.state = {
+      onClicked: null
+    }
+  }
+  menuClicked(e) {
+    let key = e.target.id
+    if(key) {
+      this.setState({
+        onClicked : key
+      })
+    }
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <Router>      
+          <div className={this.props.ColorMode ? 'Menu MenuColormode' : 'Menu'} onClick={this.menuClicked.bind(this)}>
+            <div className="Menus mainMenus">
+              <Link to="/" id='home' className={this.state.onClicked === 'home' ? 'menuOnClick' : ''}>Home</Link>
+            </div>
+            <div className="Menus mainMenus">
+              <Link to="/Aboutme" id='aboutMe' className={this.state.onClicked === 'aboutMe' ? 'menuOnClick' : ''}>About me</Link>
+            </div>
+            <div className="Menus mainMenus">
+              <Link to="/portfolio" id='portfolio' className={this.state.onClicked === 'portfolio' ? 'menuOnClick' : ''}>Portfolio</Link>
+            </div>
+            <div className="Menus Setting">
+              <label className="switch">
+                <input className="box" type="checkbox" onClick={this.props.handleMode}></input>
+                <span className="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div className={this.props.ColorMode ? 'Appmain AppmainColormode' : 'Appmain'}>
+            <Switch>
+                <Route path="/Aboutme">
+                  <Aboutme ColorMode={this.props.ColorMode} />
+                </Route>
+                <Route path="/portfolio">
+                  <Portfolio ColorMode={this.props.ColorMode} />
+                </Route>
+                <Route path="/">
+                  <Home ColorMode={this.props.ColorMode} />
+                </Route>
+            </Switch>
+          </div>
+        </Router>
+      </Fragment>
+    )
+  }
+};
