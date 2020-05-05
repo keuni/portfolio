@@ -1,7 +1,7 @@
 # Personal Portfolio
 
-* Tech Stack
-  React, JS, Express
+**Tech Stack**   
+React, JS, Express
 
 
 * client - npm install > npm start
