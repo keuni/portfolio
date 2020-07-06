@@ -81,8 +81,8 @@ input::before {
 }
 .dot-info span.label {
   text-align: left;
-  top: -80px;
-  left: 0;
+  top: -77px;
+  left: 3px;
   transform: rotateZ(-35deg);
   width: 100px;
   text-indent: -40px;

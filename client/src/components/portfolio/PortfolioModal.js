@@ -72,7 +72,7 @@ class PortfolioModal extends React.Component {
           },
         ],
       },
-      options: {},
+      options: { responsive: false },
     });
   }
 
@@ -247,6 +247,8 @@ class PortfolioModal extends React.Component {
         ],
       },
       options: {
+        responsive: false,
+
         scales: {
           xAxes: [
             {
@@ -268,15 +270,20 @@ class PortfolioModal extends React.Component {
       data: {
         datasets: [
           {
-            label: ['네', '아니요'],
+            label: ['네'],
             barThickness: 50,
             minBarLength: 0,
-            data: [17, 2],
-            backgroundColor: [
-              'rgba(49, 133, 69, 0.3)',
-              'rgba(148, 16, 76, 0.3)',
-            ],
-            borderColor: ['rgba(49, 133, 69, 0.3)', 'rgba(148, 16, 76, 0.3)'],
+            data: [17, 0],
+            backgroundColor: 'rgba(49, 133, 69, 0.3)',
+            borderColor: 'rgba(49, 133, 69, 0.3)',
+          },
+          {
+            label: ['아니요'],
+            barThickness: 50,
+            minBarLength: 0,
+            data: [0, 2],
+            backgroundColor: 'rgba(148, 16, 76, 0.3)',
+            borderColor: 'rgba(148, 16, 76, 0.3)',
           },
         ],
         labels: ['네', '아니요'],
@@ -309,7 +316,7 @@ class PortfolioModal extends React.Component {
           <div className='portfolioModal_content'>
             {steps === 0 ? (
               <>
-                <canvas id='stepZeroLineChart' />
+                <canvas id='stepZeroLineChart' width='500' height='220' />
                 <div>
                   <button className='basicBtn goBtn' onClick={this.handleSteps}>
                     Go!
@@ -379,14 +386,16 @@ class PortfolioModal extends React.Component {
                 <div>
                   <button className='basicBtn nextBtn' onClick={this.stepOne}>
                     Next
+                    <span className='arrow'>>>></span>
                   </button>
                 </div>
               </>
             ) : steps === 2 ? (
               <>
-                <canvas id='stepTwoPieChart' width='500' height='360' />
+                <canvas id='stepTwoPieChart' width='450' height='300' />
                 <button className='basicBtn nextBtn' onClick={this.handleSteps}>
                   Next
+                  <div className='arrow'>>>></div>
                 </button>
               </>
             ) : steps === 3 ? (
@@ -460,14 +469,16 @@ class PortfolioModal extends React.Component {
                     onClick={this.stepThree}
                   >
                     Next
+                    <div className='arrow'>>>></div>
                   </button>
                 </div>
               </>
             ) : steps === 4 ? (
               <>
-                <canvas id='stepFourRadarChart' width='500' height='360' />
+                <canvas id='stepFourRadarChart' width='450' height='300' />
                 <button className='basicBtn nextBtn' onClick={this.handleSteps}>
                   Next
+                  <div className='arrow'>>>></div>
                 </button>
               </>
             ) : steps === 5 ? (
@@ -503,13 +514,15 @@ class PortfolioModal extends React.Component {
                 </div>
                 <button className='basicBtn nextBtn' onClick={this.handleSteps}>
                   Next
+                  <div className='arrow'>>>></div>
                 </button>
               </>
             ) : steps === 6 ? (
               <>
-                <canvas id='stepSixScatterChart' />
+                <canvas id='stepSixScatterChart' width='450' height='300' />
                 <button className='basicBtn nextBtn' onClick={this.handleSteps}>
                   Next
+                  <div className='arrow'>>>></div>
                 </button>
               </>
             ) : steps === 7 ? (
@@ -528,26 +541,27 @@ class PortfolioModal extends React.Component {
                     this.setAnswer('interestedIn', e.target.value)
                   }
                 />
-                <label htmlFor='yes' className='radioBtn'>
+                <label htmlFor='yes' className='radioBtn radioYes'>
                   네!
                 </label>
 
                 <input
                   type='radio'
                   id='no'
-                  className='portfolioRadio'
+                  className='portfolioRadio radioNo'
                   name='interestedIn'
                   value='no'
                   onChange={(e) =>
                     this.setAnswer('interestedIn', e.target.value)
                   }
                 />
-                <label className='radioBtn' htmlFor='no'>
+                <label className='radioBtn radioNo' htmlFor='no'>
                   아니요..
                 </label>
 
                 <button className='basicBtn nextBtn' onClick={this.handleSteps}>
                   Next
+                  <div className='arrow'>>>></div>
                 </button>
               </>
             ) : steps === 8 ? (

@@ -1,9 +1,9 @@
 .portfolio {
   padding-top: 100px;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
   width: 100%;
   overflow-y: 'scroll';
-  margin-bottom: 100px;
+  margin-bottom: 10vw;
   min-height: 78vh;
   display: flex;
   flex-direction: column;
@@ -43,12 +43,12 @@ button:hover {
 .BeHappy {
   display: inline-block;
   text-align: left;
-  width: 80%;
+  width: 75%;
   margin-top: 40px;
 }
 
 .ZeroTo66 {
-  width: 80%;
+  width: 75%;
   margin-top: -30px;
 }
 
@@ -111,7 +111,7 @@ button:hover {
 }
 
 .ZeroTo66desc {
-  margin-top: 210px;
+  margin-top: 150px;
   text-align: right;
 }
 
@@ -150,7 +150,81 @@ button:hover {
   box-shadow: none;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
+  .click {
+    font-size: 16px;
+    width: 180px;
+  }
+
+  .imgContainer {
+    width: 155px;
+    height: 300px;
+    margin-right: 10px;
+  }
+
+  .BeHappy img {
+    height: 300px;
+  }
+
+  .middle {
+    top: -165px;
+    left: 40px;
+  }
+
+  .goBlog {
+    width: 90px;
+    font-size: 11px;
+  }
+
+  .portfolioTitle {
+    font-size: 18px;
+  }
+
+  .android {
+    font-size: 12px;
+  }
+
+  .portfolioPosition {
+    font-size: 12px;
+  }
+
+  .stack {
+    margin-top: -2px;
+    font-size: 8px;
+  }
+
+  .portfolioDesc {
+    font-size: 10px;
+  }
+
+  .ZeroTo66 {
+    margin-top: 0px;
+  }
+
+  .zeroTo66ImgContainer {
+    width: 95%;
+    max-width: 390px;
+    max-height: 260px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .ZeroTo66 img {
+    max-width: 390px;
+    width: 100%;
+  }
+
+  .zeroTo66middle {
+    top: -55%;
+    left: 0px;
+  }
+
+  .ZeroTo66desc {
+    margin-top: 19vh;
+  }
+}
+
+@media screen and (max-width: 640px) {
   .click {
     font-size: 14px;
     width: 160px;
@@ -230,6 +304,7 @@ button:hover {
     max-height: 200px;
     height: 50vw;
     margin-left: 0;
+    margin-bottom: 0px;
   }
 
   .ZeroTo66 img {
@@ -251,7 +326,7 @@ button:hover {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1150px) {
   .click {
     width: 300px;
     font-size: 22px;
@@ -262,30 +337,52 @@ button:hover {
   }
 
   .BeHappy {
-    width: 60%;
+    width: 70%;
+    max-width: 900px;
     margin-top: 120px;
   }
 
   .ZeroTo66 {
-    width: 60%;
+    width: 70%;
+    max-width: 900px;
+
     margin-top: -170px;
+  }
+
+  .zeroTo66ImgContainer {
+    width: 500px;
+    height: 320px;
+    margin-left: 10px;
+  }
+
+  .ZeroTo66 img {
+    width: 500px;
+  }
+
+  .ZeroTo66desc {
+    margin-top: 210px;
   }
 }
 
 @media screen and (min-width: 1600px) {
+  .BeHappy,
+  .ZeroTo66 {
+    max-width: 1200px;
+  }
+
   .imgContainer {
     width: 210px;
-    height: 400px;
+    height: 420px;
     margin-right: 10px;
   }
 
   .middle {
-    top: -220px;
-    left: 50px;
+    top: -240px;
+    left: 60px;
   }
 
   .BeHappy img {
-    height: 400px;
+    height: 420px;
   }
 
   .BeHappydesc {
@@ -297,24 +394,21 @@ button:hover {
   }
 
   .zeroTo66ImgContainer {
-    width: 500px;
-    height: 330px;
-    margin-left: 0;
+    width: 550px;
+    height: 350px;
   }
 
   .zeroTo66middle {
-    top: -180px;
-    left: 20px;
+    top: -200px;
+    left: 0px;
   }
 
   .ZeroTo66 img {
-    width: 500px;
-    float: none;
+    width: 550px;
   }
 
   .ZeroTo66desc {
-    margin-top: 210px;
-    text-align: right;
+    margin-top: 240px;
   }
 }
 
