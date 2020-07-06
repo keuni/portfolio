@@ -1,0 +1,184 @@
+.portfolioModal {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolioModal_overlay {
+  background-color: rgba(0, 0, 0, 0.882);
+  width: 100%;
+  height: 100%;
+}
+
+.portfolioModal_content {
+  position: relative;
+  font-family: 'Noto Sans KR', sans-serif, 'Roboto';
+  font-size: 17px;
+  font-weight: 500;
+  width: 580px;
+  height: 440px;
+  display: inline-block;
+  background-color: white;
+  margin-top: 7%;
+  padding: 30px;
+  padding-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  color: black;
+  vertical-align: middle;
+  position: relative;
+}
+
+.basicBtn {
+  left: 270px;
+  bottom: 40px;
+  position: absolute;
+  outline: none;
+  border: 1px black solid;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100px;
+  background-color: white;
+}
+
+.goBtn {
+  bottom: 80px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 95, 46, 1);
+}
+
+.goBtn:hover {
+  cursor: pointer;
+  background-color: #ff9270;
+}
+
+.close {
+  position: absolute;
+  border: none;
+  color: white;
+  background-color: grey;
+  border-radius: 5px;
+  font-size: 12px;
+  left: 220px;
+  bottom: 40px;
+  width: 210px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.close:hover {
+  background-color: lightgray;
+}
+
+.finalClose {
+  left: 270px;
+  font-size: 20px;
+  width: 100px;
+  height: 40px;
+}
+
+.question {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.questionOne {
+  margin-bottom: 30px;
+}
+
+.questionTwo {
+  margin-bottom: 90px;
+}
+
+.radioBtn {
+  width: 70%;
+  border: 1px black solid;
+  display: inline-block;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  margin-top: 5px;
+}
+
+.radioBtnForFive {
+  width: 60%;
+  border: 1px black solid;
+  display: inline-block;
+  padding-top: 1.6%;
+  padding-bottom: 1.6%;
+  margin-top: 5px;
+}
+
+input[type='radio'].portfolioRadio,
+input[type='checkbox'].portfolioCheckbox {
+  display: none;
+}
+
+input[type='radio'].portfolioRadio:checked + label {
+  background-color: khaki;
+}
+
+input[type='radio'].radioYes:checked + label {
+  background-color: pink;
+}
+
+input[type='checkbox'].portfolioCheckbox:checked + label {
+  background-color: lightgrey;
+}
+
+.nextBtn {
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-top: 40px;
+  background-color: rgba(255, 95, 46, 1);
+}
+
+.nextBtnForFive {
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-top: 30px;
+  background-color: rgba(255, 95, 46, 1);
+}
+
+.nextBtn:hover,
+.nextBtnForFive:hover {
+  cursor: pointer;
+  background-color: rgb(255, 150, 29);
+}
+
+#stepTwoPieChart,
+#stepFourRadarChart {
+  margin: 0 auto;
+}
+
+.textArr {
+  color: darkblue;
+  margin-left: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.count {
+  padding: 5px;
+  font-size: 20px;
+}
+
+.numberTextOne {
+  font-size: 20px;
+  margin-top: 80px;
+}
+
+.numberTextTwo {
+  font-size: 20px;
+  margin-top: 30px;
+}

@@ -1,0 +1,183 @@
+.portfolio {
+  padding-top: 70px;
+  padding-bottom: 40px;
+  width: 100%;
+  overflow-y: 'scroll';
+  margin-bottom: 100px;
+  min-height: 78vh;
+}
+
+.click {
+  font-family: 'Baloo Paaji 2';
+  background-color: #00b9f1;
+  border-radius: 20px;
+  font-size: 22px;
+  width: 250px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 50px;
+  border: white;
+  box-shadow: 1px 2px 3px black;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.BeHappy {
+  display: inline-block;
+  text-align: left;
+  width: 85%;
+  margin-top: 40px;
+}
+
+.ZeroTo66 {
+  display: inline-block;
+  text-align: left;
+  width: 85%;
+  margin-top: -200px;
+}
+
+.BeHappy img {
+  height: 400px;
+  float: left;
+}
+
+.ZeroTo66 img {
+  width: 570px;
+  float: right;
+  margin-left: 20px;
+}
+
+.ZeroTo66desc {
+  margin-top: 165px;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.portfolioTitle {
+  font-size: 40px;
+}
+
+.android {
+  font-size: 25px;
+}
+
+.portfolioPosition {
+  font-size: 25px;
+  color: gray;
+}
+
+.portfolioDesc {
+  font-family: 'Noto Sans KR', 'Segoe UI';
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.stack {
+  margin-top: -4px;
+  color: gray;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.goBlog {
+  margin-top: 20px;
+  background-color: #00b9f1;
+  width: 150px;
+  font-size: 17px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: 'Noto Sans KR', 'Segoe UI';
+  border-radius: 20px;
+  border: white;
+  box-shadow: 1px 2px 3px black;
+}
+
+@media screen and (max-width: 1200px), (max-height: 400px) {
+  .ZeroTo66 {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 940px), (max-height: 400px) {
+  .BeHappy {
+    width: 70%;
+  }
+
+  .ZeroTo66 {
+    width: 70%;
+    margin-top: 20px;
+  }
+
+  .ZeroTo66 img {
+    width: 90%;
+    float: none;
+    margin-left: 20px;
+  }
+
+  .ZeroTo66desc {
+    margin-top: 0px;
+    text-align: center;
+  }
+
+  .portfolioTitle {
+    font-size: 35px;
+  }
+
+  .android {
+    font-size: 20px;
+  }
+
+  .portfolioPosition {
+    font-size: 20px;
+  }
+
+  .portfolioDesc {
+    font-size: 15px;
+  }
+
+  .stack {
+    font-size: 14px;
+  }
+
+  .goBlog {
+    width: 130px;
+    font-size: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media screen and (max-width: 650px), (max-height: 400px) {
+  .BeHappy {
+    border-top: 1px gray solid;
+    padding-top: 30px;
+    text-align: center;
+    width: 85%;
+  }
+
+  .BeHappy img {
+    display: block;
+    margin: 0px auto;
+  }
+
+  .BeHappydesc {
+    margin-top: 90px;
+  }
+
+  .ZeroTo66 {
+    border-top: 1px gray solid;
+    padding-top: 30px;
+    width: 85%;
+    margin-top: 30px;
+  }
+}
+
+.portfolioColormode {
+  color: black;
+}

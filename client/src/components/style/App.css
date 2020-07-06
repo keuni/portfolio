@@ -1,0 +1,164 @@
+.App {
+  text-align: center;
+  font-family: 'Baloo Paaji 2', cursive, 'Noto Sans KR', sans-serif, 'Roboto',
+    sans-serif;
+  color: white;
+  background-color: #272625;
+}
+
+.Menu {
+  height: 6vh;
+  padding-top: 2vw;
+  transition: all 0.2s ease-in;
+}
+
+.Menus {
+  font-size: 25px;
+  margin: 1.5vh 20px;
+  width: 150px;
+  line-height: 4vh;
+  display: inline-block;
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+  letter-spacing: 0px;
+}
+
+.Appmain {
+  font-family: 'Do Hyeon', sans-serif;
+  position: absolute;
+  background-color: #272625;
+  width: 100%;
+  transition: all 0.2s ease-in;
+}
+
+.Footer {
+  font-family: 'Satisfy', cursive;
+  position: absolute;
+  font-size: 25px;
+  width: 100%;
+  bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mainMenus:hover {
+  letter-spacing: 2px;
+  border-bottom: 2px solid #ff5f2e;
+  transition: all 0.2s ease-in;
+}
+
+.menuOnClick {
+  letter-spacing: 2px;
+  color: #ff5f2e;
+}
+
+@media screen and (max-width: 760px), (max-height: 600px) {
+  .Menus {
+    font-size: 17px;
+    margin: 1.5vh 10px;
+    padding-top: 0px;
+    width: 90px;
+    font-weight: normal;
+    letter-spacing: 1px;
+  }
+  .mainMenus:hover {
+    letter-spacing: 2px;
+    border-bottom: 1px solid #ff5f2e;
+  }
+
+  .Setting:hover {
+    border-bottom: 1px solid #ff5f2e00;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .Menus {
+    margin: 1.5vh 30px;
+    padding-top: 0px;
+    width: 200px;
+    font-size: 35px;
+    letter-spacing: 1px;
+  }
+  .Menus:hover {
+    letter-spacing: 5px;
+  }
+}
+
+.Colormode {
+  color: black;
+  transition: all-color 0s ease-in;
+}
+
+.MenuColormode {
+  background-color: #fed47b /*#fccc65*/;
+  color: #34314c;
+  transition: all 0.2s ease-in;
+}
+
+.AppmainColormode {
+  background-color: #fed47b;
+  transition: all 0.2s ease-in;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* sliders */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(252, 109, 44);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
