@@ -20,7 +20,7 @@ export default class Aboutme extends React.Component {
   }
   render() {
     return (
-      <div className='aboutme'>
+      <div className='aboutme' id='ABOUTME'>
         <div className='flex-parent'>
           <div
             className='input-flex-container'

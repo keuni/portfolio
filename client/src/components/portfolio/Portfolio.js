@@ -26,6 +26,7 @@ class Portfolio extends React.Component {
         className={
           this.props.ColorMode ? 'portfolio portfolioColormode' : 'portfolio'
         }
+        id='PORTFOLIO'
       >
         <div>
           <button className='click' onClick={() => this.handleModal(true)}>

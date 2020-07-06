@@ -6,9 +6,19 @@
   background-color: #272625;
 }
 
+.topMenu {
+  z-index: 99;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  transition: all 0.2s ease-in;
+}
+
 .Menu {
+  background-color: #272625;
   height: 6vh;
-  padding-top: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
   transition: all 0.2s ease-in;
 }
 
@@ -24,7 +34,6 @@
 
 .Appmain {
   font-family: 'Do Hyeon', sans-serif;
-  position: absolute;
   background-color: #272625;
   width: 100%;
   transition: all 0.2s ease-in;
@@ -32,10 +41,9 @@
 
 .Footer {
   font-family: 'Satisfy', cursive;
-  position: absolute;
-  font-size: 25px;
+  font-size: 20px;
   width: 100%;
-  bottom: 30px;
+  padding-bottom: 20px;
 }
 
 a {
@@ -67,10 +75,6 @@ a {
     letter-spacing: 2px;
     border-bottom: 1px solid #ff5f2e;
   }
-
-  .Setting:hover {
-    border-bottom: 1px solid #ff5f2e00;
-  }
 }
 
 @media screen and (min-width: 1500px) {
@@ -92,9 +96,8 @@ a {
 }
 
 .MenuColormode {
-  background-color: #fed47b /*#fccc65*/;
+  background-color: #fed47b;
   color: #34314c;
-  transition: all 0.2s ease-in;
 }
 
 .AppmainColormode {

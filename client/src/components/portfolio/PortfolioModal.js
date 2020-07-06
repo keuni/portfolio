@@ -78,7 +78,7 @@ class PortfolioModal extends React.Component {
 
   stepOne() {
     if (this.state.job) {
-      fetch;
+      // fetch;
       this.handleSteps();
     }
   }
