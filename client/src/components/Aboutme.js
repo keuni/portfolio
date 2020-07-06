@@ -91,78 +91,102 @@ export default class Aboutme extends React.Component {
                 </p>
               </div>
             </div>
-            <input
-              type='radio'
-              name='timeline-dot'
-              id='2010'
-              className={
-                this.state.onClickedEvent === '2010' ? 'dot dotClicked' : 'dot'
-              }
-            />
-            <div className='dot-info'>
-              <span className='year'>2010</span>
-              <span className='label'>경영학과</span>
-            </div>
-            <input
-              type='radio'
-              name='timeline-dot'
-              id='2015'
-              className={
-                this.state.onClickedEvent === '2015' ? 'dot dotClicked' : 'dot'
-              }
-            />
-            <div className='dot-info' id='2015'>
-              <span className='year'>2015</span>
-              <span className='label'>HRD</span>
-            </div>
-            <input
-              type='radio'
-              name='timeline-dot'
-              id='2018'
-              className={
-                this.state.onClickedEvent === '2018' ? 'dot dotClicked' : 'dot'
-              }
-            />
-            <div className='dot-info' id='2018'>
-              <span className='year'>2018</span>
-              <span className='label'>재무팀</span>
-            </div>
-            <input
-              type='radio'
-              name='timeline-dot'
-              id='2019'
-              className={
-                this.state.onClickedEvent === '2019' ? 'dot dotClicked' : 'dot'
-              }
-            />
-            <div className='dot-info' id='2019'>
-              <span className='year'>2019</span>
-              <span className='label'>런던생활</span>
-            </div>
-            <input
-              type='radio'
-              name='timeline-dot'
-              id='2020'
-              className={
-                this.state.onClickedEvent === '2020' ? 'dot dotClicked' : 'dot'
-              }
-            />
-            <div className='dot-info' id='2020'>
-              <span className='year'>2020</span>
-              <span className='label'>부트캠프</span>
-            </div>
-            <input
-              type='radio'
-              name='timeline-dot'
-              id='2020~'
-              className={
-                this.state.onClickedEvent === '2020~' ? 'dot dotClicked' : 'dot'
-              }
-            />
-            <div className='dot-info' id='2020~'>
-              <span className='year'>2020~</span>
-              <span className='label'>to be continued</span>
-            </div>
+            <span className='dotGroup'>
+              <input
+                type='radio'
+                name='timeline-dot'
+                id='2010'
+                className={
+                  this.state.onClickedEvent === '2010'
+                    ? 'dot dotClicked'
+                    : 'dot'
+                }
+              />
+              <div className='dot-info'>
+                <span className='year'>2010</span>
+                <span className='label'>경영학과</span>
+              </div>
+            </span>
+            <span className='dotGroup'>
+              <input
+                type='radio'
+                name='timeline-dot'
+                id='2015'
+                className={
+                  this.state.onClickedEvent === '2015'
+                    ? 'dot dotClicked'
+                    : 'dot'
+                }
+              />
+              <div className='dot-info' id='2015'>
+                <span className='year'>2015</span>
+                <span className='label'>HRD</span>
+              </div>
+            </span>
+            <span className='dotGroup'>
+              <input
+                type='radio'
+                name='timeline-dot'
+                id='2018'
+                className={
+                  this.state.onClickedEvent === '2018'
+                    ? 'dot dotClicked'
+                    : 'dot'
+                }
+              />
+              <div className='dot-info' id='2018'>
+                <span className='year'>2018</span>
+                <span className='label'>재무팀</span>
+              </div>
+            </span>
+            <span className='dotGroup'>
+              <input
+                type='radio'
+                name='timeline-dot'
+                id='2019'
+                className={
+                  this.state.onClickedEvent === '2019'
+                    ? 'dot dotClicked'
+                    : 'dot'
+                }
+              />
+              <div className='dot-info' id='2019'>
+                <span className='year'>2019</span>
+                <span className='label'>런던생활</span>
+              </div>
+            </span>
+            <span className='dotGroup'>
+              <input
+                type='radio'
+                name='timeline-dot'
+                id='2020'
+                className={
+                  this.state.onClickedEvent === '2020'
+                    ? 'dot dotClicked'
+                    : 'dot'
+                }
+              />
+              <div className='dot-info' id='2020'>
+                <span className='year'>2020</span>
+                <span className='label'>부트캠프</span>
+              </div>
+            </span>
+            <span className='dotGroup'>
+              <input
+                type='radio'
+                name='timeline-dot'
+                id='2020~'
+                className={
+                  this.state.onClickedEvent === '2020~'
+                    ? 'dot dotClicked'
+                    : 'dot'
+                }
+              />
+              <div className='dot-info' id='2020~'>
+                <span className='year'>2020~</span>
+                <span className='label'>to be continued</span>
+              </div>
+            </span>
           </div>
         </div>
       </div>

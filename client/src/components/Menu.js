@@ -43,33 +43,17 @@ export default class Menu extends React.Component {
           onClick={this.menuClicked.bind(this)}
         >
           <div className='Menus mainMenus'>
-            <span
-              id='home'
-              className={this.state.onClicked === 'home' ? 'menuOnClick' : ''}
-              onClick={this.clickHome}
-            >
+            <span id='home' onClick={this.clickHome}>
               Home
             </span>
           </div>
           <div className='Menus mainMenus'>
-            <span
-              id='aboutMe'
-              className={
-                this.state.onClicked === 'aboutMe' ? 'menuOnClick' : ''
-              }
-              onClick={this.clickAboutMe}
-            >
+            <span id='aboutMe' onClick={this.clickAboutMe}>
               About me
             </span>
           </div>
           <div className='Menus mainMenus'>
-            <span
-              id='portfolio'
-              className={
-                this.state.onClicked === 'portfolio' ? 'menuOnClick' : ''
-              }
-              onClick={this.clickPortfolio}
-            >
+            <span id='portfolio' onClick={this.clickPortfolio}>
               Portfolio
             </span>
           </div>

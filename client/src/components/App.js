@@ -21,6 +21,25 @@ class App extends React.Component {
     });
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      let y = window.scrollY;
+      if (y < 370) {
+        document.querySelector('#home').classList.add('menuOnClick');
+        document.querySelector('#aboutMe').classList.remove('menuOnClick');
+        document.querySelector('#portfolio').classList.remove('menuOnClick');
+      } else if (y < 1000) {
+        document.querySelector('#aboutMe').classList.add('menuOnClick');
+        document.querySelector('#home').classList.remove('menuOnClick');
+        document.querySelector('#portfolio').classList.remove('menuOnClick');
+      } else {
+        document.querySelector('#portfolio').classList.add('menuOnClick');
+        document.querySelector('#home').classList.remove('menuOnClick');
+        document.querySelector('#aboutMe').classList.remove('menuOnClick');
+      }
+    });
+  }
+
   render() {
     return (
       <div className={this.state.ColorMode ? 'App Colormode' : 'App'}>
@@ -34,7 +53,7 @@ class App extends React.Component {
         >
           <Home ColorMode={this.state.ColorMode} />
           <AboutMe />
-          <Portfolio />
+          <Portfolio ColorMode={this.state.ColorMode} />
           <div className='Footer'>Thank you</div>
         </div>
       </div>

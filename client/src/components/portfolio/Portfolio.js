@@ -30,7 +30,7 @@ class Portfolio extends React.Component {
       >
         <div>
           <button className='click' onClick={() => this.handleModal(true)}>
-            CLICK HERE (Chart.js)
+            Click Here (Chart.js)
           </button>
         </div>
         {this.state.openModal ? (

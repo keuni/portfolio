@@ -1,6 +1,6 @@
 .aboutme {
   padding-top: 15vh;
-  font-size: 22px;
+  font-size: 16px;
   height: 87vh;
 }
 
@@ -9,9 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 80%;
-  bottom: 0;
 }
 
 .input-flex-container {
@@ -20,10 +18,15 @@
   align-items: center;
   flex-wrap: wrap;
   width: 80vw;
-  max-width: 1000px;
+  max-width: 1200px;
   position: relative;
   z-index: 0;
-  margin-left: calc((80vw - 25px) / 20);
+}
+
+.dotGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 input::before,
@@ -38,12 +41,13 @@ input::after {
 }
 input::before {
   width: 15vw;
-  left: calc(-7vw);
+  left: calc(-6vw);
 }
 
 .dot {
-  width: 25px;
-  height: 25px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
   background-color: rgb(60, 84, 107);
   position: relative;
   border-radius: 50%;
@@ -55,29 +59,29 @@ input::before {
 }
 
 .dot-info {
+  left: 22px;
   width: 50px;
   height: 5px;
   display: block;
   visibility: hidden;
   position: relative;
   z-index: -1;
-  left: calc(((80vw / 20) * -1) + 15px);
 }
 .dot-info span {
   visibility: visible;
   position: absolute;
 }
 .year {
-  font-size: 15px;
+  font-size: 12px;
 }
 .dot-info span.year {
-  bottom: -35px;
+  bottom: -30px;
   left: -15px;
   transform: translateX(-50%);
 }
 .dot-info span.label {
   text-align: left;
-  top: -86px;
+  top: -80px;
   left: 0;
   transform: rotateZ(-35deg);
   width: 100px;
@@ -85,9 +89,10 @@ input::before {
 }
 
 .timeline-descriptions-wrapper {
-  position: relative;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  font-size: 22px;
+  font-size: 19px;
   margin-top: 2vh;
   margin-bottom: 15vh;
   height: 20vh;
@@ -95,11 +100,9 @@ input::before {
 
 .descriptionBox {
   padding: 1vh 2vw;
-  position: absolute;
   border-radius: 10px;
   width: 70%;
-  height: 14vh;
-  margin-left: 10%;
+  height: 12vh;
   background-color: whitesmoke;
   color: black;
   display: flex;
@@ -118,7 +121,7 @@ input::before {
 
 .dotClicked {
   background-color: white;
-  border: #ff5f2e 6px solid;
+  border: #ff5f2e 4px solid;
 }
 
 p {
@@ -126,81 +129,90 @@ p {
   padding-left: 7px;
 }
 
-@media screen and (max-width: 850px), (max-height: 600px) {
+@media screen and (max-width: 850px), /* (max-height: 500px) */ {
   .aboutme {
-    font-size: 17px;
+    padding-top: 13vh;
+    font-size: 12px;
+  }
+
+  input::before {
+    left: calc(-6vw);
   }
 
   .dot {
+    left: 0px;
     width: 15px;
     height: 15px;
   }
 
   .dot-info {
+    left: 7px;
     width: 20px;
     height: 2px;
+  }
+
+  .year {
+    font-size: 11px;
   }
   .dot-info span.year {
     bottom: -25px;
     left: -18px;
   }
+
   .dot-info span.label {
-    top: -70px;
+    top: -62px;
     width: 70px;
-  }
-
-  .year {
-    font-size: 13px;
-  }
-
-  .timeline-descriptions-wrapper {
-    font-size: 18px;
+    left: 5px;
   }
 
   .descriptionBox {
-    font-size: 19px;
-    padding: 1vh 2vw;
-    width: 80%;
-    right: 10%;
+    font-size: 16px;
+    width: 70%;
+  }
+
+  .dotClicked {
+    border: #ff5f2e 3px solid;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .aboutme {
-    font-size: 14px;
-  }
-
-  .timeline-descriptions-wrapper {
-    font-size: 15px;
-  }
-
   p {
     border: none;
     padding-left: 0;
   }
 
+  .dot {
+    left: 2px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .dot-info {
+    left: 10px;
+    width: 15px;
+  }
+
+  .year {
+    font-size: 11px;
+  }
+
   .descriptionBox {
-    font-size: 18px;
+    font-size: 14px;
+    width: 80%;
   }
 }
 
 @media screen and (min-width: 1500px) {
+  .aboutme {
+    font-size: 18px;
+  }
   .descriptionBox {
     font-size: 27px;
   }
-  .dot-info {
-    left: calc(((80vw / 20) * -0.6));
+  .year {
+    font-size: 18px;
   }
-}
-
-@media screen and (min-width: 2000px) {
-  .dot-info {
-    left: calc(((80vw / 20) * -0.5));
-  }
-}
-
-@media screen and (min-width: 2600px) {
-  .dot-info {
-    left: calc(((80vw / 20) * -0.4));
+  .dot-info span.year {
+    bottom: -35px;
   }
 }

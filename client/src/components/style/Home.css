@@ -1,17 +1,11 @@
 .Home {
   text-align: center;
-  font-size: 50px;
-  padding-top: 22vh;
-  width: 100%;
+  font-size: 40px;
+  padding-top: 37vh;
   height: 75vh;
-}
-
-.introduce {
   display: inline-block;
   width: 70%;
-  line-height: 45px;
-  padding-top: 10vh;
-  line-height: 65px;
+  line-height: 55px;
 }
 
 .name {
@@ -25,18 +19,17 @@
 }
 
 @media screen and (min-width: 1000px) {
-  .introduce {
-    font-size: 60px;
-    width: 900px;
-    line-height: 75px;
+  .Home {
+    font-size: 50px;
+    width: 800px;
+    line-height: 70px;
   }
 }
 
 @media screen and (max-width: 700px), (max-height: 400px) {
-  .introduce {
+  .Home {
     font-size: 35px;
     line-height: 45px;
-    padding-top: 10vh;
     width: 80%;
   }
 }
