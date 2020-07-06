@@ -23,8 +23,8 @@
 }
 
 .Menus {
-  font-size: 25px;
-  margin: 1.5vh 20px;
+  font-size: 21px;
+  margin: 2vh 20px;
   width: 150px;
   line-height: 4vh;
   display: inline-block;
@@ -60,53 +60,6 @@ a {
 .menuOnClick {
   letter-spacing: 2px;
   color: #ff5f2e;
-}
-
-@media screen and (max-width: 760px), (max-height: 600px) {
-  .Menus {
-    font-size: 17px;
-    margin: 1.5vh 10px;
-    padding-top: 0px;
-    width: 90px;
-    font-weight: normal;
-    letter-spacing: 1px;
-  }
-  .mainMenus:hover {
-    letter-spacing: 2px;
-    border-bottom: 1px solid #ff5f2e;
-  }
-}
-
-@media screen and (min-width: 1500px) {
-  .Menus {
-    margin: 1.5vh 30px;
-    padding-top: 0px;
-    width: 200px;
-    font-size: 25px;
-    letter-spacing: 1px;
-  }
-  .Menus:hover {
-    letter-spacing: 5px;
-  }
-}
-
-.Colormode {
-  color: black;
-  transition: all-color 0s ease-in;
-}
-
-.MenuColormode {
-  background-color: #fed47b;
-  color: #34314c;
-}
-
-.AppmainColormode {
-  background-color: #fed47b;
-  transition: all 0.2s ease-in;
-}
-
-input:focus {
-  outline: none;
 }
 
 /* sliders */
@@ -164,4 +117,82 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media screen and (max-width: 760px), (max-height: 600px) {
+  .Menus {
+    height: 25px;
+    font-size: 17px;
+    margin: 2vh 10px;
+    padding-top: 0px;
+    width: 110px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media screen and (max-width: 600px), (max-height: 600px) {
+  .Menus {
+    height: 25px;
+    font-size: 13px;
+    margin: 1.5vh 5px;
+    padding-top: 0px;
+    width: 70px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+  }
+  .mainMenus:hover {
+    letter-spacing: 2px;
+    border-bottom: 1px solid #ff5f2e;
+  }
+
+  .switch {
+    width: 22px;
+    height: 13px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  .slider:before {
+    height: 10px;
+    width: 10px;
+    left: 1px;
+    bottom: 1.5px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .Menus {
+    margin: 1.5vh 30px;
+    padding-top: 0px;
+    width: 200px;
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+  .Menus:hover {
+    letter-spacing: 5px;
+  }
+}
+
+.Colormode {
+  color: black;
+  transition: all-color 0s ease-in;
+}
+
+.MenuColormode {
+  background-color: #fed47b;
+  color: #34314c;
+}
+
+.AppmainColormode {
+  background-color: #fed47b;
+  transition: all 0.2s ease-in;
+}
+
+input:focus {
+  outline: none;
 }

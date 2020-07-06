@@ -100,7 +100,6 @@ button:hover {
 
 .imgContainer:hover .image,
 .zeroTo66ImgContainer:hover .zeroTo66Image {
-  cursor: pointer;
   opacity: 0.2;
 }
 
@@ -253,8 +252,18 @@ button:hover {
 }
 
 @media screen and (min-width: 1200px) {
+  .click {
+    width: 300px;
+    font-size: 22px;
+  }
+
+  button:hover {
+    box-shadow: 8px 8px #015d79, -8px -8px #7ee0fe;
+  }
+
   .BeHappy {
     width: 60%;
+    margin-top: 120px;
   }
 
   .ZeroTo66 {
@@ -264,10 +273,6 @@ button:hover {
 }
 
 @media screen and (min-width: 1600px) {
-  .BeHappy {
-    margin-top: 100px;
-  }
-
   .imgContainer {
     width: 210px;
     height: 400px;
