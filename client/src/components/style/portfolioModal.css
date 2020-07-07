@@ -17,21 +17,21 @@
   position: relative;
   font-family: 'Noto Sans KR', sans-serif, 'Roboto';
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
   width: 500px;
   height: 350px;
   display: inline-block;
   background-color: white;
-  margin-top: 5%;
+  margin-top: 10%;
   padding: 30px;
   padding-top: 30px;
   border-radius: 10px;
   color: black;
   vertical-align: middle;
-  position: relative;
 }
 
 .basicBtn {
+  font-family: 'Baloo Paaji 2', sans-serif;
   font-size: 16px;
   left: 230px;
   bottom: -20px;
@@ -39,14 +39,14 @@
   outline: none;
   border: 1px black solid;
   border-radius: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   width: 100px;
   background-color: white;
 }
 
 .goBtn {
-  box-shadow: none;
+  font-weight: 400;
   bottom: 70px;
   border: none;
   color: white;
@@ -71,8 +71,8 @@
   left: 180px;
   bottom: -10px;
   width: 200px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .close:hover {
@@ -106,8 +106,8 @@
   border-radius: 3px;
   border: 0.5px rgb(154, 147, 88) solid;
   display: inline-block;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 3.5%;
+  padding-bottom: 3.5%;
   margin-top: 5px;
 }
 
@@ -142,27 +142,41 @@ input[type='radio'].portfolioRadio:checked + label {
 }
 
 .radioYes {
-  border: 0.5px pink solid;
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  font-size: 80px;
 }
 
-.radioYes:hover {
-  background-color: pink;
+.MuiTypography-body1 {
+  font-size: 30px !important;
 }
 
-.radioNo {
-  border: 0.5px grey solid;
+.radioYes:hover .MuiTypography-body1 {
+  font-size: 40px !important;
+  transition: 0.3s;
+}
+
+.radioNo .MuiRadio-colorSecondary.Mui-checked {
+  color: lightblue !important;
+}
+
+.radioNo .MuiTypography-body1 {
+  font-size: 15px !important;
 }
 
 .radioNo:hover {
-  background-color: grey;
+  background-color: white;
 }
 
-input[type='radio'].radioYes:checked + label {
+input[type='radio'].radioYes:checked .MuiTypography-body1 {
   background-color: pink;
+  color: red;
 }
 
 input[type='radio'].radioNo:checked + label {
-  background-color: grey;
+  background-color: white;
+  /* color: lightblue; */
 }
 
 input[type='checkbox'].portfolioCheckbox:checked + label {
@@ -175,15 +189,13 @@ input[type='checkbox'].portfolioCheckbox:checked + label {
   margin-top: 40px;
   background-color: rgba(255, 95, 46, 1);
   transition: 0.3s;
-  font-weight: 600;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 .nextBtnForFive {
   border: none;
   color: white;
-  font-weight: 600;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   margin-top: 30px;
   background-color: rgba(255, 95, 46, 1);
   transition: 0.3s;
@@ -223,7 +235,7 @@ input[type='checkbox'].portfolioCheckbox:checked + label {
 }
 
 .textArr {
-  /* color: bla; */
+  color: rgb(228, 93, 52);
   margin-left: 35px;
   text-align: left;
   margin-bottom: 20px;
@@ -249,4 +261,11 @@ input[type='checkbox'].portfolioCheckbox:checked + label {
 .check {
   color: coral;
   margin-top: 10px;
+}
+
+.canvas {
+  position: absolute;
+  left: 10px;
+  top: 30px;
+  width: 530px;
 }

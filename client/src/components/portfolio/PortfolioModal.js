@@ -1,6 +1,12 @@
 import React from 'react';
 import '../style/portfolioModal.css';
 import Chart from 'chart.js';
+import StyledRadio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 
 class PortfolioModal extends React.Component {
   constructor(props) {
@@ -187,6 +193,7 @@ class PortfolioModal extends React.Component {
   }
 
   setAnswer(state, value) {
+    console.log('value', value);
     if (state === 'job') {
       this.setState({
         job: value,
@@ -240,7 +247,7 @@ class PortfolioModal extends React.Component {
         ],
         labels: ['소프트웨어 개발', '경영지원', '기획/운영', '기타'],
       },
-      options: { responsive: false },
+      options: {},
     });
   }
 
@@ -645,16 +652,18 @@ class PortfolioModal extends React.Component {
 
                 <div>
                   <button className='basicBtn nextBtn' onClick={this.stepOne}>
-                    Next
+                    NEXT
                     <span className='arrow'>>>></span>
                   </button>
                 </div>
               </>
             ) : steps === 2 ? (
               <>
-                <canvas id='stepTwoPieChart' width='450' height='300' />
+                <div className='canvas'>
+                  <canvas id='stepTwoPieChart' />
+                </div>
                 <button className='basicBtn nextBtn' onClick={this.handleSteps}>
-                  Next
+                  NEXT
                   <div className='arrow'>>>></div>
                 </button>
               </>
@@ -728,7 +737,7 @@ class PortfolioModal extends React.Component {
                     className='basicBtn nextBtnForFive'
                     onClick={this.stepThree}
                   >
-                    Next
+                    NEXT
                     <div className='arrow'>>>></div>
                   </button>
                 </div>
@@ -737,7 +746,7 @@ class PortfolioModal extends React.Component {
               <>
                 <canvas id='stepFourRadarChart' width='450' height='300' />
                 <button className='basicBtn nextBtn' onClick={this.handleSteps}>
-                  Next
+                  NEXT
                   <div className='arrow'>>>></div>
                 </button>
               </>
@@ -775,7 +784,7 @@ class PortfolioModal extends React.Component {
                   명
                 </div>
                 <button className='basicBtn nextBtn' onClick={this.stepFive}>
-                  Next
+                  NEXT
                   <div className='arrow'>>>></div>
                 </button>
               </>
@@ -783,7 +792,7 @@ class PortfolioModal extends React.Component {
               <>
                 <canvas id='stepSixScatterChart' width='450' height='300' />
                 <button className='basicBtn nextBtn' onClick={this.handleSteps}>
-                  Next
+                  NEXT
                   <div className='arrow'>>>></div>
                 </button>
               </>
@@ -793,7 +802,7 @@ class PortfolioModal extends React.Component {
                   개발자 김경은에게 관심이 생기셨나요 ?
                 </div>
 
-                <input
+                {/* <input
                   type='radio'
                   id='yes'
                   className='portfolioRadio radioYes'
@@ -803,7 +812,25 @@ class PortfolioModal extends React.Component {
                 />
                 <label htmlFor='yes' className='radioBtn radioYes'>
                   네!
-                </label>
+                </label> */}
+                {/* <div>
+                  <FormControlLabel
+                    className='portfolioRadio radioYes'
+                    control={
+                      <Checkbox
+                        // className='portfolioRadio radioYes'
+                        icon={<FavoriteBorder />}
+                        checkedIcon={<Favorite />}
+                        name='interest'
+                        value='yes'
+                        onChange={(e) =>
+                          this.setAnswer('interest', e.target.value)
+                        }
+                      />
+                    }
+                    label='네'
+                  />
+                </div>
 
                 <input
                   type='radio'
@@ -815,10 +842,41 @@ class PortfolioModal extends React.Component {
                 />
                 <label className='radioBtn radioNo' htmlFor='no'>
                   아니요..
-                </label>
+                </label> */}
+
+                <FormControl component='fieldset'>
+                  <RadioGroup aria-label='gender' name='customized-radios'>
+                    <FormControlLabel
+                      className='portfolioRadio radioYes'
+                      value='yes'
+                      control={
+                        <StyledRadio
+                          icon={<FavoriteBorder />}
+                          checkedIcon={<Favorite />}
+                          onChange={(e) =>
+                            this.setAnswer('interest', e.target.value)
+                          }
+                        />
+                      }
+                      label='네!'
+                    />
+                    <FormControlLabel
+                      className='portfolioRadio radioNo'
+                      value='no'
+                      control={
+                        <StyledRadio
+                          onChange={(e) =>
+                            this.setAnswer('interest', e.target.value)
+                          }
+                        />
+                      }
+                      label='아니오'
+                    />
+                  </RadioGroup>
+                </FormControl>
 
                 <button className='basicBtn nextBtn' onClick={this.stepSeven}>
-                  Next
+                  NEXT
                   <div className='arrow'>>>></div>
                 </button>
               </>

@@ -9,12 +9,34 @@
   line-height: 55px;
 }
 
+@keyframes circle {
+  /* circle이라는 애니메이션 키프래임 만들기*/
+  0% {
+    border-radius: 20% 25% 20% 0;
+    background: rgb(90, 20, 20);
+  }
+  30% {
+    border-radius: 0 30% 35% 30%;
+    background: rgb(153, 46, 8);
+  }
+  60% {
+    border-radius: 30% 0 30% 20%;
+    background: rgb(6, 108, 163);
+  }
+  100% {
+    border-radius: 20% 30% 0 40%;
+    background: rgb(42, 128, 3);
+  }
+}
+
 .name {
   position: relative;
   color: rgb(250, 190, 98);
   text-decoration: underline;
   transition: all 0.2s ease-in;
+  animation: circle 2s 1s infinite alternate;
 }
+
 .nameColormode {
   background-color: #050505;
   transition: all 0.2s ease-in;
@@ -55,31 +77,44 @@
   line-height: 17px;
   font-size: 13px;
   text-align: left;
-  left: 0px;
+  left: -25px;
   top: 45px;
   visibility: hidden;
   color: rgb(250, 190, 98);
 }
+
+.contactColormode {
+  color: black;
+}
+
 .github,
 .email {
   width: 13px;
   margin-right: 5px;
   position: relative;
+  vertical-align: middle;
 }
 
 .copied {
   transition: all 0.1s ease-in;
-  height: 15px;
-  border-radius: 5px;
-  color: black;
+  height: 17px;
   position: absolute;
-  top: 2px;
+  top: 1px;
   left: 16px;
   width: 142px;
-  background-color: white;
-  opacity: 0.7;
+  opacity: 0.9;
   text-align: center;
   visibility: hidden;
+}
+
+.copiedDarkMode {
+  background-color: #272625;
+  color: white;
+}
+
+.copiedColorMode {
+  background-color: #fed47b;
+  color: black;
 }
 
 .showCopied {
@@ -96,6 +131,19 @@
     width: 800px;
     line-height: 70px;
   }
+
+  .contact {
+    font-size: 14px;
+    left: -27px;
+    top: 55px;
+  }
+
+  .copied {
+    height: 17px;
+    top: 0px;
+    left: 16px;
+    width: 152px;
+  }
 }
 
 @media screen and (max-width: 700px), (max-height: 400px) {
@@ -103,5 +151,18 @@
     font-size: 35px;
     line-height: 45px;
     width: 80%;
+  }
+
+  .contact {
+    width: 150px;
+    line-height: 15px;
+    font-size: 12px;
+    left: -35px;
+    top: 40px;
+  }
+
+  .copied {
+    height: 15px;
+    width: 130px;
   }
 }

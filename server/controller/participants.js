@@ -2,11 +2,9 @@ const { participants } = require('../db/models');
 
 module.exports = {
   getParticipants: async (req, res) => {
-    console.log('getParticipants');
     participants
       .findAll()
       .then((data) => {
-        console.log(data);
         let reply = data.map((obj) => obj.dataValues);
         res.status(200).json(reply);
       })
@@ -16,7 +14,6 @@ module.exports = {
   },
   postJobs: async (req, res) => {
     const { job } = req.body;
-    console.log('job', job);
     participants
       .create({
         job,
@@ -52,7 +49,6 @@ module.exports = {
   },
   postInterest: async (req, res) => {
     let { id, interest } = req.body;
-    console.log('interets', interest);
     participants
       .update({ interest }, { where: { id } })
       .then((result) => res.status(200).json(result))

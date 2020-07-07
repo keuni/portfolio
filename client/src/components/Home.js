@@ -40,12 +40,22 @@ class Home extends React.Component {
             className={this.props.ColorMode ? 'name nameColormode' : 'name'}
           >
             김경은
-            <span className='contact'>
+            <span
+              className={
+                this.props.ColorMode ? 'contact contactColormode' : 'contact'
+              }
+            >
               <div onClick={this.copyEmail.bind(this)}>
                 <img src={email} alt={email} className='email' />
                 kyungeun.kiim@gmail.com
                 <div
-                  className={this.state.copied ? 'showCopied copied' : 'copied'}
+                  className={
+                    this.state.copied
+                      ? this.props.ColorMode
+                        ? 'showCopied copied copiedColorMode'
+                        : 'showCopied copied copiedDarkMode'
+                      : 'copied'
+                  }
                 >
                   copied
                 </div>
