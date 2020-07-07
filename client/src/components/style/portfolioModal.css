@@ -219,6 +219,7 @@ input[type='checkbox'].portfolioCheckbox:checked + label {
 #stepTwoPieChart,
 #stepFourRadarChart {
   margin: 0 auto;
+  z-index: 10;
 }
 
 .textArr {

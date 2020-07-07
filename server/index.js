@@ -1,31 +1,31 @@
-const express = require('express')
+const express = require('express');
 const app = express();
-const PORT = 3000;
-const path = require('path')
+const PORT = 4000;
+const bodyParser = require('body-parser');
+const participantsRouter = require('./routes/participants');
+const cors = require('cors');
 
-app.use(express.static(path.join(__dirname, 'public')));
- 
-app.use((req,res,next) => {
-  console.log("Serving request type " + req.method + " for url " + req.url)
-  if(req.method !== 'POST' && req.method !== 'OPTIONS') {
-    res.status(400).send('invalid request')
-  } 
+app.use((req, res, next) => {
+  console.log('Serving request type ' + req.method + ' for url ' + req.url);
   next();
-})
+});
+
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(
+  cors({
+    origin: ['http://localhost:3000'],
+    method: ['GET', 'POST'],
+    credentials: true,
+  })
+);
 
-// app.get('/*', function (req, res) {
-//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-// });
+app.get('/', (req, res) => {
+  res.send('hello world!');
+});
 
-let messageArr = [];
+app.use('/', participantsRouter);
 
-app.post('/*', (req,res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-  messageArr.push(req.body);
-  res.send('Sent well, Thank you');
-})
-
-app.listen(PORT,()=>{
-    console.log(`server listen on ${PORT}`)
- })
+app.listen(PORT, () => {
+  console.log(`server listen on ${PORT}`);
+});

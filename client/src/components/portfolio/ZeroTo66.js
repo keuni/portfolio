@@ -7,7 +7,11 @@ function ZeroTo66() {
       <div className='zeroTo66ImgContainer'>
         <img src={ZeroTo66Main} alt={ZeroTo66Main} className='zeroTo66Image' />
         <div className='middle zeroTo66middle'>
-          <a href='https://ttdoongdoong.tistory.com/16' target='_blank'>
+          <a
+            href='https://ttdoongdoong.tistory.com/16'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <button className='goBlog'>자세히 보러가기</button>
           </a>
         </div>

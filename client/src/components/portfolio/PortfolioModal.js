@@ -13,18 +13,31 @@ class PortfolioModal extends React.Component {
       abilityText: '',
       company: null,
       developer: null,
-      interestedIn: null,
+      interest: null,
+      allData: {},
+      id: null,
     };
     this.handleSteps = this.handleSteps.bind(this);
+    this.getAllData = this.getAllData.bind(this);
+    this.setAllData = this.setAllData.bind(this);
     this.stepZero = this.stepZero.bind(this);
-    this.setAnswer = this.setAnswer.bind(this);
-    this.stepOne = this.stepOne.bind(this);
     this.getThisWeek = this.getThisWeek.bind(this);
+    this.getParticipants = this.getParticipants.bind(this);
+    this.stepOne = this.stepOne.bind(this);
+    this.setId = this.setId.bind(this);
+    this.setAnswer = this.setAnswer.bind(this);
+    this.getJobs = this.getJobs.bind(this);
     this.stepTwo = this.stepTwo.bind(this);
     this.setAnswerByOrder = this.setAnswerByOrder.bind(this);
     this.stepThree = this.stepThree.bind(this);
+    this.getAverage = this.getAverage.bind(this);
+    this.getYourAbility = this.getYourAbility.bind(this);
     this.stepFour = this.stepFour.bind(this);
+    this.stepFive = this.stepFive.bind(this);
+    this.getCompany = this.getCompany.bind(this);
     this.stepSix = this.stepSix.bind(this);
+    this.stepSeven = this.stepSeven.bind(this);
+    this.getInterest = this.getInterest.bind(this);
     this.stepEight = this.stepEight.bind(this);
   }
 
@@ -42,7 +55,33 @@ class PortfolioModal extends React.Component {
   }
 
   componentDidMount() {
-    this.stepZero();
+    this.getAllData();
+  }
+
+  getAllData() {
+    fetch('http://localhost:4000/data', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        if (typeof data === 'object') {
+          this.setAllData(data);
+          this.stepZero();
+        }
+      });
+  }
+
+  setAllData(allData) {
+    this.setState({
+      allData,
+    });
   }
 
   componentDidUpdate() {
@@ -58,17 +97,20 @@ class PortfolioModal extends React.Component {
   }
 
   stepZero() {
+    let labels = this.getThisWeek();
+    let data = this.getParticipants(labels);
+
     var ctx = document.getElementById('stepZeroLineChart').getContext('2d');
     new Chart(ctx, {
       type: 'line',
       data: {
-        labels: this.getThisWeek(),
+        labels,
         datasets: [
           {
             label: '참여자 수',
             backgroundColor: 'rgba(255, 95, 46, 0.3)',
             borderColor: 'rgba(255, 95, 46, 0.3)',
-            data: [2, 6, 13, 20, 28],
+            data,
           },
         ],
       },
@@ -76,11 +118,72 @@ class PortfolioModal extends React.Component {
     });
   }
 
+  getThisWeek() {
+    let week = ['일', '월', '화', '수', '목', '금', '토'];
+    let result = [];
+    let day = 0;
+    while (day < 5) {
+      let date = new Date(Date.now() - day * 60 * 60 * 24 * 1000);
+      date =
+        date.getMonth() + 1 + '/' + date.getDate() + ' ' + week[date.getDay()];
+      result.unshift(date);
+      day += 1;
+    }
+    return result;
+  }
+
+  getParticipants(dateArr) {
+    let participants = dateArr.map((day) => {
+      let count = 0;
+      this.state.allData.forEach((obj) => {
+        let month =
+          obj.createdAt.slice(5, 7)[0] === '0'
+            ? obj.createdAt.slice(5, 7)[1]
+            : obj.createdAt.slice(5, 7);
+        let date =
+          obj.createdAt.slice(8, 10)[0] === '0'
+            ? obj.createdAt.slice(8, 10)[1]
+            : obj.createdAt.slice(8, 10);
+        let format = month + '/' + date;
+
+        if (format === day.slice(0, -2)) {
+          count += 1;
+        }
+      });
+      return count;
+    });
+    return participants;
+  }
+
   stepOne() {
     if (this.state.job) {
-      // fetch;
+      fetch('http://localhost:4000/job', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          job: this.state.job,
+        }),
+      })
+        .then((res) => {
+          if (res.status === 200) {
+            return res.json();
+          }
+        })
+        .then((data) => {
+          if (typeof data === 'object') {
+            this.setId(data.id);
+          }
+        });
       this.handleSteps();
     }
+  }
+
+  setId(id) {
+    this.setState({
+      id,
+    });
   }
 
   setAnswer(state, value) {
@@ -100,24 +203,27 @@ class PortfolioModal extends React.Component {
       this.setState({
         developer: value,
       });
-    } else if (state === 'interestedIn') {
+    } else if (state === 'interest') {
       this.setState({
-        interestedIn: value,
+        interest: value,
       });
     }
   }
 
-  getThisWeek() {
-    let week = ['일', '월', '화', '수', '목', '금', '토'];
-    let result = [];
-    let day = 0;
-    while (day < 5) {
-      let date = new Date(Date.now() - day * 60 * 60 * 24 * 1000);
-      date =
-        date.getMonth() + 1 + '/' + date.getDate() + ' ' + week[date.getDay()];
-      result.unshift(date);
-      day += 1;
-    }
+  getJobs() {
+    let jobs = ['programmer', 'backoffice', 'pm', 'etc'];
+    let result = jobs.map((job) => {
+      let count = 0;
+      this.state.allData.forEach((obj) => {
+        if (job === obj.job) {
+          count += 1;
+        }
+      });
+      if (this.state.job === job) {
+        count += 1;
+      }
+      return count;
+    });
     return result;
   }
 
@@ -128,7 +234,7 @@ class PortfolioModal extends React.Component {
       data: {
         datasets: [
           {
-            data: [17, 13, 2, 4],
+            data: this.getJobs(),
             backgroundColor: ['pink', 'lightgreen', 'skyblue', 'gold'],
           },
         ],
@@ -159,9 +265,77 @@ class PortfolioModal extends React.Component {
   }
 
   stepThree() {
-    if (this.state.ability && this.state.ability.length === 5) {
-      this.handleSteps();
+    let { id, ability } = this.state;
+
+    if (ability && ability.length === 5) {
+      fetch('http://localhost:4000/ability', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id,
+          ability,
+        }),
+      })
+        .then((res) => {
+          if (res.status === 200) {
+            return res.json();
+          }
+        })
+        .then((data) => {
+          if (typeof data === 'object') {
+            this.handleSteps();
+          }
+        });
     }
+  }
+
+  getAverage() {
+    let labels = [
+      '커뮤니케이션 능력',
+      '학습 능력',
+      '현재의 실력',
+      '개발속도',
+      '업무 관리 능력',
+    ];
+    let result = labels.map((label) => {
+      let n = 0;
+      let point = 0;
+      this.state.allData.forEach((obj) => {
+        if (obj.ability) {
+          let answer = obj.ability.split(',');
+          answer.forEach((cur, index) => {
+            if (cur === label) {
+              point += 5 - index;
+              n += 1;
+            }
+          });
+        }
+      });
+      return +(point / n).toFixed(3);
+    });
+    return result;
+  }
+
+  getYourAbility() {
+    let labels = [
+      '커뮤니케이션 능력',
+      '학습 능력',
+      '현재의 실력',
+      '개발속도',
+      '업무 관리 능력',
+    ];
+    let result = labels.map((label) => {
+      let point = 0;
+      this.state.ability.forEach((answer, index) => {
+        if (answer === label) {
+          point = 5 - index;
+        }
+      });
+      return point;
+    });
+    return result;
   }
 
   stepFour() {
@@ -174,20 +348,20 @@ class PortfolioModal extends React.Component {
         datasets: [
           {
             label: '선택하신 답변',
-            data: [5, 4, 1, 2, 3],
+            data: this.getYourAbility(),
             backgroundColor: 'rgba(255, 99, 132, 0.3)',
             borderColor: 'rgba(255, 99, 132, 0.3)',
           },
           {
             label: '평균답변',
-            data: [4.5, 3.5, 1.2, 2, 3],
+            data: this.getAverage(),
             backgroundColor: 'rgba(46, 95, 242, 0.3)',
             borderColor: 'rgba(46, 95, 242, 0.3)',
           },
         ],
         labels: [
           '커뮤니케이션 능력',
-          '학습능력',
+          '학습 능력',
           '현재의 실력',
           '개발속도',
           '업무 관리 능력',
@@ -204,6 +378,43 @@ class PortfolioModal extends React.Component {
     });
   }
 
+  stepFive() {
+    let { id, company, developer } = this.state;
+
+    fetch('http://localhost:4000/company', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        id,
+        company,
+        developer,
+      }),
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        if (typeof data === 'object') {
+          this.handleSteps();
+        }
+      });
+  }
+
+  getCompany() {
+    let result = [];
+    this.state.allData.forEach((obj) => {
+      if (obj.company) {
+        let set = { x: obj.company, y: obj.developer };
+        result.push(set);
+      }
+    });
+    return result;
+  }
+
   stepSix() {
     var ctxSix = document
       .getElementById('stepSixScatterChart')
@@ -216,8 +427,8 @@ class PortfolioModal extends React.Component {
             label: '입력해주신 답변(총 인원, 개발자 인원)',
             data: [
               {
-                x: 20,
-                y: 6,
+                x: this.state.company,
+                y: this.state.developer,
               },
             ],
             pointRadius: 7,
@@ -226,20 +437,7 @@ class PortfolioModal extends React.Component {
           },
           {
             label: '다른 분들의 답변(총 인원, 개발자 인원)',
-            data: [
-              {
-                x: 30,
-                y: 12,
-              },
-              {
-                x: 7,
-                y: 2,
-              },
-              {
-                x: 34,
-                y: 50,
-              },
-            ],
+            data: this.getCompany(),
             pointRadius: 7,
             backgroundColor: 'rgba(46, 95, 242, 0.3)',
             borderColor: 'rgba(46, 95, 242, 0.3)',
@@ -254,11 +452,72 @@ class PortfolioModal extends React.Component {
             {
               type: 'linear',
               position: 'bottom',
+              ticks: {
+                beginAtZero: true,
+                stepSize: 1,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                stepSize: 1,
+              },
             },
           ],
         },
       },
     });
+  }
+
+  stepSeven() {
+    let { id, interest } = this.state;
+    interest = interest === 'no' ? false : true;
+    if (interest !== null) {
+      fetch('http://localhost:4000/interest', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id,
+          interest,
+        }),
+      })
+        .then((res) => {
+          if (res.status === 200) {
+            return res.json();
+          }
+        })
+        .then((data) => {
+          if (typeof data === 'object') {
+            this.handleSteps();
+          }
+        });
+    }
+  }
+
+  getInterest() {
+    let result = {};
+    let yes = 0;
+    let no = 0;
+    this.state.allData.forEach((obj) => {
+      console.log(obj.interest);
+      if (obj.interest === true) {
+        yes += 1;
+      } else if (obj.interest === false) {
+        no += 1;
+      }
+    });
+    if (this.state.interest === 'yes') {
+      yes += 1;
+    } else {
+      no += 1;
+    }
+    result.yes = [yes, 0];
+    result.no = [0, no];
+    return result;
   }
 
   stepEight() {
@@ -273,7 +532,7 @@ class PortfolioModal extends React.Component {
             label: ['네'],
             barThickness: 50,
             minBarLength: 0,
-            data: [17, 0],
+            data: this.getInterest()['yes'],
             backgroundColor: 'rgba(49, 133, 69, 0.3)',
             borderColor: 'rgba(49, 133, 69, 0.3)',
           },
@@ -281,7 +540,7 @@ class PortfolioModal extends React.Component {
             label: ['아니요'],
             barThickness: 50,
             minBarLength: 0,
-            data: [0, 2],
+            data: this.getInterest()['no'],
             backgroundColor: 'rgba(148, 16, 76, 0.3)',
             borderColor: 'rgba(148, 16, 76, 0.3)',
           },
@@ -294,6 +553,7 @@ class PortfolioModal extends React.Component {
             {
               ticks: {
                 min: 0,
+                stepSize: 1,
               },
             },
           ],
@@ -485,8 +745,10 @@ class PortfolioModal extends React.Component {
               <>
                 <div className='question'>
                   (3/4) 다니시고 있으신 회사의 규모와 개발자의 수가 궁금해요,
-                  <br />
                   알려주시겠어요?
+                  <br />
+                  (대략 적어주셔도 괜찮아요, 아무것도 적지 않은 채로 스킵도
+                  가능합니다!)
                 </div>
                 <div className='numberTextOne'>
                   총 인원 :{' '}
@@ -512,7 +774,7 @@ class PortfolioModal extends React.Component {
                   />
                   명
                 </div>
-                <button className='basicBtn nextBtn' onClick={this.handleSteps}>
+                <button className='basicBtn nextBtn' onClick={this.stepFive}>
                   Next
                   <div className='arrow'>>>></div>
                 </button>
@@ -535,11 +797,9 @@ class PortfolioModal extends React.Component {
                   type='radio'
                   id='yes'
                   className='portfolioRadio radioYes'
-                  name='interestedIn'
+                  name='interest'
                   value='yes'
-                  onChange={(e) =>
-                    this.setAnswer('interestedIn', e.target.value)
-                  }
+                  onChange={(e) => this.setAnswer('interest', e.target.value)}
                 />
                 <label htmlFor='yes' className='radioBtn radioYes'>
                   네!
@@ -549,17 +809,15 @@ class PortfolioModal extends React.Component {
                   type='radio'
                   id='no'
                   className='portfolioRadio radioNo'
-                  name='interestedIn'
+                  name='interest'
                   value='no'
-                  onChange={(e) =>
-                    this.setAnswer('interestedIn', e.target.value)
-                  }
+                  onChange={(e) => this.setAnswer('interest', e.target.value)}
                 />
                 <label className='radioBtn radioNo' htmlFor='no'>
                   아니요..
                 </label>
 
-                <button className='basicBtn nextBtn' onClick={this.handleSteps}>
+                <button className='basicBtn nextBtn' onClick={this.stepSeven}>
                   Next
                   <div className='arrow'>>>></div>
                 </button>

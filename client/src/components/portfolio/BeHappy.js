@@ -7,7 +7,11 @@ function BeHappy() {
       <div className='imgContainer'>
         <img src={BeHappyMain} alt={BeHappyMain} className='image' />
         <div className='middle'>
-          <a href='https://ttdoongdoong.tistory.com/15' target='_blank'>
+          <a
+            href='https://ttdoongdoong.tistory.com/15'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <button className='goBlog'>자세히 보러가기</button>
           </a>
         </div>

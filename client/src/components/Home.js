@@ -52,7 +52,11 @@ class Home extends React.Component {
               </div>
               <div>
                 <img src={github} alt={github} className='github' />
-                <a href='https://github.com/keuni' target='_blank'>
+                <a
+                  href='https://github.com/keuni'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   https://github.com/keuni
                 </a>
               </div>
