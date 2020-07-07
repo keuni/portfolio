@@ -24,11 +24,11 @@ class App extends React.Component {
   componentDidMount() {
     window.addEventListener('scroll', () => {
       let y = window.scrollY;
-      if (y < 280) {
+      if (y < (window.innerHeight / 100) * 30) {
         document.querySelector('#home').classList.add('menuOnClick');
         document.querySelector('#aboutMe').classList.remove('menuOnClick');
         document.querySelector('#portfolio').classList.remove('menuOnClick');
-      } else if (y < 800) {
+      } else if (y < (window.innerHeight / 100) * 120) {
         document.querySelector('#aboutMe').classList.add('menuOnClick');
         document.querySelector('#home').classList.remove('menuOnClick');
         document.querySelector('#portfolio').classList.remove('menuOnClick');
