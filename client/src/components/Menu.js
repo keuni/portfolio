@@ -14,7 +14,6 @@ export default class Menu extends React.Component {
   }
 
   menuClicked(e) {
-    console.log('menuClicked', e.target);
     let key = e.target.id;
     if (key) {
       this.setState({

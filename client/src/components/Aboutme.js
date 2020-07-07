@@ -10,7 +10,6 @@ export default class Aboutme extends React.Component {
     };
   }
   eventClicked(e) {
-    console.log('id', e.target.id, 'none', e.target);
     let key = e.target.id;
     if (key) {
       this.setState({
@@ -77,7 +76,8 @@ export default class Aboutme extends React.Component {
                       : 'none'
                   }
                 >
-                  코드스테이츠 부트캠프를 통해 웹 개발자로 커리어 전환 준비
+                  코드스테이츠 Immersive 코스 수료
+                  <br /> 프로젝트 2회 진행
                 </p>
                 <p
                   id='2020~'
@@ -87,7 +87,7 @@ export default class Aboutme extends React.Component {
                       : 'none'
                   }
                 >
-                  생각하는 대로 만드는 개발자
+                  프론트엔드 개발자
                 </p>
               </div>
             </div>
