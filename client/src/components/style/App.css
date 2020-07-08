@@ -211,9 +211,10 @@ input:focus {
     margin: 1.5vh 5px;
     width: 230px;
   }
+
   .mainMenus:hover {
-    letter-spacing: 2px;
-    border-bottom: 1px solid #ff5f2e;
+    letter-spacing: 3px;
+    border-bottom: none;
   }
 
   .switch {

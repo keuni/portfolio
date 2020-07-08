@@ -3,7 +3,7 @@
   padding-bottom: 10px;
   width: 100%;
   overflow-y: 'scroll';
-  margin-bottom: 10vw;
+  margin-bottom: 7vh;
   min-height: 78vh;
   display: flex;
   flex-direction: column;
@@ -152,6 +152,9 @@ button:hover {
 }
 
 @media screen and (max-width: 850px) {
+  .portfolio {
+    margin-bottom: 6vh;
+  }
   .click {
     font-size: 16px;
     width: 180px;
@@ -229,7 +232,7 @@ button:hover {
 @media screen and (max-width: 650px) {
   .portfolio {
     padding-top: 70px;
-    margin-bottom: 0px;
+    margin-bottom: 1vh;
   }
 
   .click {
@@ -335,6 +338,10 @@ button:hover {
 }
 
 @media screen and (min-width: 1150px) {
+  .portfolio {
+    margin-bottom: 12vh;
+  }
+
   .click {
     width: 300px;
     font-size: 22px;
@@ -377,6 +384,9 @@ button:hover {
 }
 
 @media screen and (min-width: 1600px) {
+  .portfolio {
+    margin-bottom: 15vh;
+  }
   .BeHappy,
   .ZeroTo66 {
     max-width: 1200px;
