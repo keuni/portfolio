@@ -65,7 +65,7 @@ class PortfolioModal extends React.Component {
   }
 
   getAllData() {
-    fetch('http://15.164.102.207:4000/data', {
+    fetch('http://localhost:4000/data', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ class PortfolioModal extends React.Component {
 
   stepOne() {
     if (this.state.job) {
-      fetch('http://15.164.102.207:4000/job', {
+      fetch('http://localhost:4000/job', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -275,7 +275,7 @@ class PortfolioModal extends React.Component {
     let { id, ability } = this.state;
 
     if (ability && ability.length === 5) {
-      fetch('http://15.164.102.207:4000/ability', {
+      fetch('http://localhost:4000/ability', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -388,7 +388,7 @@ class PortfolioModal extends React.Component {
   stepFive() {
     let { id, company, developer } = this.state;
 
-    fetch('http://15.164.102.207:4000/company', {
+    fetch('http://localhost:4000/company', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -482,7 +482,7 @@ class PortfolioModal extends React.Component {
     let { id, interest } = this.state;
     interest = interest === 'no' ? false : true;
     if (interest !== null) {
-      fetch('http://15.164.102.207:4000/interest', {
+      fetch('http://localhost:4000/interest', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -799,7 +799,7 @@ class PortfolioModal extends React.Component {
             ) : steps === 7 ? (
               <>
                 <div className='question questionTwo'>
-                  개발자 김경은에게 관심이 생기셨나요 ?
+                  (4/4) 개발자 김경은에게 관심이 생기셨나요 ?
                 </div>
 
                 {/* <input

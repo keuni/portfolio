@@ -184,7 +184,7 @@ export default class Aboutme extends React.Component {
               />
               <div className='dot-info' id='2020~'>
                 <span className='year'>2020~</span>
-                <span className='label'>to be continued</span>
+                <span className='label continued'>to be continued</span>
               </div>
             </span>
           </div>

@@ -166,3 +166,33 @@
     width: 130px;
   }
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .Home {
+    padding-top: 32vh;
+    font-size: 129px;
+    line-height: 130px;
+    width: 80%;
+  }
+
+  .contact {
+    width: 480px;
+    line-height: 45px;
+    font-size: 40px;
+    left: -80px;
+    top: 140px;
+  }
+
+  .github,
+  .email {
+    width: 35px;
+    margin-right: 5px;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .copied {
+    height: 15px;
+    width: 130px;
+  }
+}

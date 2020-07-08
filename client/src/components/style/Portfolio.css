@@ -151,7 +151,7 @@ button:hover {
   box-shadow: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   .click {
     font-size: 16px;
     width: 180px;
@@ -226,7 +226,7 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 650px) {
   .portfolio {
     padding-top: 70px;
     margin-bottom: 0px;
@@ -426,4 +426,110 @@ button:hover {
 
 .portfolioColormode {
   color: black;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .portfolio {
+    padding-top: 170px;
+    margin-bottom: 0px;
+  }
+
+  .click {
+    font-size: 60px;
+    width: 600px;
+    margin-bottom: 80px;
+  }
+
+  .BeHappy {
+    margin-top: 10px;
+    border-top: none;
+    padding-top: 25px;
+    text-align: left;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imgContainer {
+    width: 520px;
+    height: 1000px;
+    margin-right: 10px;
+  }
+
+  .BeHappy img {
+    height: 1000px;
+  }
+
+  .BeHappydesc {
+    margin-top: 90px;
+  }
+
+  .middle {
+    font-size: 50px;
+    top: -530px;
+    left: 100px;
+  }
+
+  .goBlog {
+    width: 350px;
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .portfolioTitle {
+    font-size: 60px;
+  }
+
+  .android {
+    font-size: 30px;
+  }
+
+  .portfolioPosition {
+    font-size: 40px;
+  }
+
+  .stack {
+    font-size: 27px;
+  }
+
+  .portfolioDesc {
+    font-size: 30px;
+  }
+
+  .ZeroTo66 {
+    border-top: none;
+    padding-top: 30px;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .zeroTo66ImgContainer {
+    width: 100%;
+    max-width: 800px;
+    max-height: 700px;
+    height: 51vw;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .ZeroTo66 img {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .zeroTo66middle {
+    top: -60%;
+    left: 0px;
+  }
+
+  .ZeroTo66desc {
+    margin-top: 1px;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 150px;
+  }
 }

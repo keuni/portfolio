@@ -269,3 +269,159 @@ input[type='checkbox'].portfolioCheckbox:checked + label {
   top: 30px;
   width: 530px;
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .portfolioModal_content {
+    font-size: 40px;
+    font-weight: 400;
+    width: 800px;
+    height: 1000px;
+    margin-top: 450px;
+    padding: 70px;
+  }
+
+  .basicBtn {
+    bottom: 150px;
+    font-size: 80px;
+    left: 170px;
+    width: 600px;
+  }
+
+  .close {
+    font-size: 30px;
+    left: 170px;
+    bottom: 10px;
+    width: 600px;
+  }
+
+  #stepZeroLineChart {
+    position: absolute;
+    left: 20px;
+    top: 100px;
+    width: 900px !important;
+    height: 600px !important;
+  }
+
+  .finalClose {
+    left: 220px;
+    font-size: 50px;
+    width: 500px;
+    height: 90px;
+    bottom: 50px;
+  }
+
+  .question {
+    font-size: 37px;
+    margin-bottom: 20px;
+  }
+
+  .questionOne {
+    margin-bottom: 50px;
+  }
+
+  .radioBtn {
+    font-size: 45px;
+    width: 100%;
+    margin-top: 25px;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+
+  .nextBtn {
+    bottom: 60px;
+    margin-top: 40px;
+  }
+
+  .arrow {
+    font-size: 90px;
+  }
+
+  #stepTwoPieChart {
+    position: absolute;
+    top: 100px;
+    left: -50px;
+    width: 1000px !important;
+    height: 600px !important;
+  }
+
+  .textArr {
+    margin-left: 0px;
+    margin-bottom: 20px;
+    font-size: 23px;
+  }
+
+  .radioBtnForFive {
+    font-size: 40px;
+    width: 90%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-top: 15px;
+  }
+
+  .nextBtnForFive {
+    bottom: 20px;
+  }
+
+  #stepFourRadarChart {
+    position: absolute;
+    top: 100px;
+    left: -20px;
+    width: 1000px !important;
+    height: 700px !important;
+  }
+
+  #stepSixScatterChart {
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    width: 900px !important;
+    height: 600px !important;
+  }
+
+  .radioYes {
+    margin-top: 150px;
+    height: 200px;
+    width: 100px;
+  }
+
+  .MuiTypography-body1 {
+    font-size: 80px !important;
+  }
+
+  .radioYes:hover .MuiTypography-body1 {
+    font-size: 120px !important;
+  }
+
+  .radioNo .MuiTypography-body1 {
+    font-size: 40px !important;
+  }
+
+  #stepEightBarChart {
+    height: 600px !important;
+  }
+
+  .count {
+    font-size: 50px;
+  }
+
+  .numberTextOne {
+    font-size: 50px;
+    margin-top: 120px;
+  }
+
+  .numberTextTwo {
+    font-size: 50px;
+    margin-top: 50px;
+  }
+
+  .check {
+    margin-top: 100px;
+  }
+
+  /* .canvas {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    width: 530px;
+  } */
+}
