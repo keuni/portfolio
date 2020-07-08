@@ -223,13 +223,14 @@ p {
   .flex-parent {
     height: 90%;
   }
+
   p {
     border: none;
     padding-left: 0;
   }
 
   .aboutme {
-    padding-top: 10vh;
+    padding-top: 8vh;
     font-size: 35px;
   }
 
