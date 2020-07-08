@@ -22,7 +22,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "copy": "cp -r build/ ../server/public",
-    "lint": "eslint ./src/"
+    "lint": "eslint ./src/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,6 +42,8 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
-  }
+    "eslint": "^6.8.0",
+    "gh-pages": "^3.1.0"
+  },
+  "homepage": "https://keuni.github.io/portfolio"
 }
