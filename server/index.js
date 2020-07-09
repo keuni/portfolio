@@ -14,7 +14,10 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ['http://localhost:3000'],
+    origin: [
+      'http://keuni.github.io/portfolio/',
+      'https://keuni.github.io/portfolio/',
+    ],
     method: ['GET', 'POST'],
     credentials: true,
   })

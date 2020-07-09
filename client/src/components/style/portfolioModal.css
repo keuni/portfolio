@@ -248,6 +248,13 @@ input[type='checkbox'].portfolioCheckbox:checked + label {
   margin-right: 4px;
 }
 
+#stepSixScatterChart {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 500px !important;
+}
+
 .numberTextOne {
   font-size: 15px;
   margin-top: 80px;
@@ -261,6 +268,10 @@ input[type='checkbox'].portfolioCheckbox:checked + label {
 .check {
   color: coral;
   margin-top: 10px;
+}
+
+#stepEightBarChart {
+  width: 460px !important;
 }
 
 .canvas {
@@ -373,8 +384,8 @@ input[type='checkbox'].portfolioCheckbox:checked + label {
   #stepSixScatterChart {
     position: absolute;
     top: 120px;
-    left: 10px;
-    width: 900px !important;
+    left: 20px;
+    width: 950px !important;
     height: 600px !important;
   }
 

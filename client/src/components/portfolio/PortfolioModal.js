@@ -65,7 +65,7 @@ class PortfolioModal extends React.Component {
   }
 
   getAllData() {
-    fetch('http://localhost:4000/data', {
+    fetch('http://15.164.102.207:4000/data', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -92,12 +92,19 @@ class PortfolioModal extends React.Component {
 
   componentDidUpdate() {
     if (this.state.steps === 2) {
+      console.log(95);
       this.stepTwo();
     } else if (this.state.steps === 4) {
+      console.log(98);
+
       this.stepFour();
     } else if (this.state.steps === 6) {
+      console.log(902);
+
       this.stepSix();
     } else if (this.state.steps === 8) {
+      console.log(106);
+
       this.stepEight();
     }
   }
@@ -114,13 +121,29 @@ class PortfolioModal extends React.Component {
         datasets: [
           {
             label: '참여자 수',
-            backgroundColor: 'rgba(255, 95, 46, 0.3)',
-            borderColor: 'rgba(255, 95, 46, 0.3)',
+            backgroundColor: 'rgba(255, 199, 3, 0.6)',
+            borderColor: 'rgba(255, 199, 3, 0.6)',
             data,
           },
         ],
       },
-      options: { responsive: false },
+      options: {
+        responsive: false,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                userCallback: function (label) {
+                  if (Math.floor(label) === label) {
+                    return label;
+                  }
+                },
+              },
+            },
+          ],
+        },
+      },
     });
   }
 
@@ -141,21 +164,22 @@ class PortfolioModal extends React.Component {
   getParticipants(dateArr) {
     let participants = dateArr.map((day) => {
       let count = 0;
-      this.state.allData.forEach((obj) => {
-        let month =
-          obj.createdAt.slice(5, 7)[0] === '0'
-            ? obj.createdAt.slice(5, 7)[1]
-            : obj.createdAt.slice(5, 7);
-        let date =
-          obj.createdAt.slice(8, 10)[0] === '0'
-            ? obj.createdAt.slice(8, 10)[1]
-            : obj.createdAt.slice(8, 10);
-        let format = month + '/' + date;
-
-        if (format === day.slice(0, -2)) {
-          count += 1;
-        }
-      });
+      if (this.state.allData.length > 0) {
+        this.state.allData.forEach((obj) => {
+          let month =
+            obj.createdAt.slice(5, 7)[0] === '0'
+              ? obj.createdAt.slice(5, 7)[1]
+              : obj.createdAt.slice(5, 7);
+          let date =
+            obj.createdAt.slice(8, 10)[0] === '0'
+              ? obj.createdAt.slice(8, 10)[1]
+              : obj.createdAt.slice(8, 10);
+          let format = month + '/' + date;
+          if (format === day.slice(0, -2)) {
+            count += 1;
+          }
+        });
+      }
       return count;
     });
     return participants;
@@ -163,7 +187,7 @@ class PortfolioModal extends React.Component {
 
   stepOne() {
     if (this.state.job) {
-      fetch('http://localhost:4000/job', {
+      fetch('http://15.164.102.207:4000/job', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -193,7 +217,6 @@ class PortfolioModal extends React.Component {
   }
 
   setAnswer(state, value) {
-    console.log('value', value);
     if (state === 'job') {
       this.setState({
         job: value,
@@ -272,17 +295,26 @@ class PortfolioModal extends React.Component {
   }
 
   stepThree() {
+    let abilityObj = {
+      '커뮤니케이션 능력': 'communication',
+      '학습 능력': 'learn',
+      '현재의 실력': 'current',
+      개발속도: 'speed',
+      '업무 관리 능력': 'managing',
+    };
     let { id, ability } = this.state;
-
+    let EngAbility = ability.map((ele) => {
+      return abilityObj[ele];
+    });
     if (ability && ability.length === 5) {
-      fetch('http://localhost:4000/ability', {
+      fetch('http://15.164.102.207:4000/ability', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           id,
-          ability,
+          ability: EngAbility,
         }),
       })
         .then((res) => {
@@ -299,13 +331,7 @@ class PortfolioModal extends React.Component {
   }
 
   getAverage() {
-    let labels = [
-      '커뮤니케이션 능력',
-      '학습 능력',
-      '현재의 실력',
-      '개발속도',
-      '업무 관리 능력',
-    ];
+    let labels = ['communication', 'learn', 'current', 'speed', 'managing'];
     let result = labels.map((label) => {
       let n = 0;
       let point = 0;
@@ -388,7 +414,7 @@ class PortfolioModal extends React.Component {
   stepFive() {
     let { id, company, developer } = this.state;
 
-    fetch('http://localhost:4000/company', {
+    fetch('http://15.164.102.207:4000/company', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -482,7 +508,7 @@ class PortfolioModal extends React.Component {
     let { id, interest } = this.state;
     interest = interest === 'no' ? false : true;
     if (interest !== null) {
-      fetch('http://localhost:4000/interest', {
+      fetch('http://15.164.102.207:4000/interest', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -510,7 +536,6 @@ class PortfolioModal extends React.Component {
     let yes = 0;
     let no = 0;
     this.state.allData.forEach((obj) => {
-      console.log(obj.interest);
       if (obj.interest === true) {
         yes += 1;
       } else if (obj.interest === false) {
