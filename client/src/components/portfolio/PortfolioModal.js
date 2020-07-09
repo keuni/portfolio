@@ -7,7 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
-const url = 'http://15.164.102.207:4000/';
+const url = 'https://15.164.102.207:4000/';
 
 class PortfolioModal extends React.Component {
   constructor(props) {
