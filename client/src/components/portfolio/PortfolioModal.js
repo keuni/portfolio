@@ -602,6 +602,7 @@ class PortfolioModal extends React.Component {
           <div className='portfolioModal_content'>
             {steps === 0 ? (
               <>
+                <div>http로만 가능합니다</div>
                 <canvas id='stepZeroLineChart' width='500' height='220' />
                 <div>
                   <button className='basicBtn goBtn' onClick={this.handleSteps}>
