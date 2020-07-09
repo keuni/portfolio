@@ -65,7 +65,7 @@ class PortfolioModal extends React.Component {
   }
 
   getAllData() {
-    fetch('https://15.164.102.207:443/data', {
+    fetch('http://15.164.102.207:4000/data', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -92,19 +92,12 @@ class PortfolioModal extends React.Component {
 
   componentDidUpdate() {
     if (this.state.steps === 2) {
-      console.log(95);
       this.stepTwo();
     } else if (this.state.steps === 4) {
-      console.log(98);
-
       this.stepFour();
     } else if (this.state.steps === 6) {
-      console.log(902);
-
       this.stepSix();
     } else if (this.state.steps === 8) {
-      console.log(106);
-
       this.stepEight();
     }
   }
@@ -187,7 +180,7 @@ class PortfolioModal extends React.Component {
 
   stepOne() {
     if (this.state.job) {
-      fetch('https://15.164.102.207:443/job', {
+      fetch('http://15.164.102.207:4000/job', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -307,7 +300,7 @@ class PortfolioModal extends React.Component {
       return abilityObj[ele];
     });
     if (ability && ability.length === 5) {
-      fetch('https://15.164.102.207:443/ability', {
+      fetch('http://15.164.102.207:4000/ability', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -414,7 +407,7 @@ class PortfolioModal extends React.Component {
   stepFive() {
     let { id, company, developer } = this.state;
 
-    fetch('https://15.164.102.207:443/company', {
+    fetch('http://15.164.102.207:4000/company', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -508,7 +501,7 @@ class PortfolioModal extends React.Component {
     let { id, interest } = this.state;
     interest = interest === 'no' ? false : true;
     if (interest !== null) {
-      fetch('https://15.164.102.207:443/interest', {
+      fetch('http://15.164.102.207:4000/interest', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
