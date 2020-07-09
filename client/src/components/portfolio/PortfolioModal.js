@@ -65,7 +65,7 @@ class PortfolioModal extends React.Component {
   }
 
   getAllData() {
-    fetch('http://15.164.102.207:4000/data', {
+    fetch('https://15.164.102.207:443/data', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -187,7 +187,7 @@ class PortfolioModal extends React.Component {
 
   stepOne() {
     if (this.state.job) {
-      fetch('http://15.164.102.207:4000/job', {
+      fetch('https://15.164.102.207:443/job', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -307,7 +307,7 @@ class PortfolioModal extends React.Component {
       return abilityObj[ele];
     });
     if (ability && ability.length === 5) {
-      fetch('http://15.164.102.207:4000/ability', {
+      fetch('https://15.164.102.207:443/ability', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -414,7 +414,7 @@ class PortfolioModal extends React.Component {
   stepFive() {
     let { id, company, developer } = this.state;
 
-    fetch('http://15.164.102.207:4000/company', {
+    fetch('https://15.164.102.207:443/company', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -508,7 +508,7 @@ class PortfolioModal extends React.Component {
     let { id, interest } = this.state;
     interest = interest === 'no' ? false : true;
     if (interest !== null) {
-      fetch('http://15.164.102.207:4000/interest', {
+      fetch('https://15.164.102.207:443/interest', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

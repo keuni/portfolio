@@ -17,6 +17,7 @@ app.use(
     origin: [
       'http://keuni.github.io/portfolio/',
       'https://keuni.github.io/portfolio/',
+      'http://localhost:3000/portfolio',
     ],
     method: ['GET', 'POST'],
     credentials: true,
