@@ -7,6 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+const url = 'http://15.164.102.207:4000/';
 
 class PortfolioModal extends React.Component {
   constructor(props) {
@@ -65,7 +66,7 @@ class PortfolioModal extends React.Component {
   }
 
   getAllData() {
-    fetch('http://15.164.102.207:4000/data', {
+    fetch(url + 'data', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -180,7 +181,7 @@ class PortfolioModal extends React.Component {
 
   stepOne() {
     if (this.state.job) {
-      fetch('http://15.164.102.207:4000/job', {
+      fetch(url + 'job', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -300,7 +301,7 @@ class PortfolioModal extends React.Component {
       return abilityObj[ele];
     });
     if (ability && ability.length === 5) {
-      fetch('http://15.164.102.207:4000/ability', {
+      fetch(url + 'ability', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -407,7 +408,7 @@ class PortfolioModal extends React.Component {
   stepFive() {
     let { id, company, developer } = this.state;
 
-    fetch('http://15.164.102.207:4000/company', {
+    fetch(url + 'company', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -501,7 +502,7 @@ class PortfolioModal extends React.Component {
     let { id, interest } = this.state;
     interest = interest === 'no' ? false : true;
     if (interest !== null) {
-      fetch('http://15.164.102.207:4000/interest', {
+      fetch(url + 'interest', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

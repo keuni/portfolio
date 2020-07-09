@@ -15,11 +15,11 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: [
-      'http://keuni.github.io/portfolio/',
-      'https://keuni.github.io/portfolio/',
-      'http://localhost:3000/portfolio',
+      'http://keuni.github.io',
+      'https://keuni.github.io',
+      'http://localhost:3000',
     ],
-    method: ['GET', 'POST'],
+    method: ['GET', 'POST', 'OPTIONS'],
     credentials: true,
   })
 );
