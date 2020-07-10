@@ -28,7 +28,7 @@ class Portfolio extends React.Component {
         }
         id='PORTFOLIO'
       >
-        <div>
+        {/* <div>
           <button className='click' onClick={() => this.handleModal(true)}>
             Click Here (Chart.js)
           </button>
@@ -37,7 +37,7 @@ class Portfolio extends React.Component {
           <PortfolioModal handleModal={this.handleModal} />
         ) : (
           ''
-        )}
+        )} */}
 
         <BeHappy />
         <ZeroTo66 />
