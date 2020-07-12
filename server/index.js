@@ -14,14 +14,14 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: 'http://keuni-portfolio.s3-website.ap-northeast-2.amazonaws.com/',
+    origin: 'http://keuni-portfolio.s3-website.ap-northeast-2.amazonaws.com',
     // [
     //   'http://keuni.github.io',
     //   'https://keuni.github.io',
     //   'http://localhost:3000',
-    //   'http://keuni-portfolio.s3-website.ap-northeast-2.amazonaws.com/',
+    //   'http://keuni-portfolio.s3-website.ap-northeast-2.amazonaws.com',
     // ]
-    method: ['GET', 'POST', 'OPTIONS'],
+    method: ['GET', 'POST'],
     credentials: true,
   })
 );
