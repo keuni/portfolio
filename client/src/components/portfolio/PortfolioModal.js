@@ -7,7 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
-const url = 'https://15.164.102.207:4000/';
+const url = 'http://15.164.102.207:4000/';
 
 class PortfolioModal extends React.Component {
   constructor(props) {
@@ -602,7 +602,6 @@ class PortfolioModal extends React.Component {
           <div className='portfolioModal_content'>
             {steps === 0 ? (
               <>
-                <div>http로만 가능합니다</div>
                 <canvas id='stepZeroLineChart' width='500' height='220' />
                 <div>
                   <button className='basicBtn goBtn' onClick={this.handleSteps}>
@@ -776,8 +775,8 @@ class PortfolioModal extends React.Component {
                   (3/4) 다니시고 있으신 회사의 규모와 개발자의 수가 궁금해요,
                   알려주시겠어요?
                   <br />
-                  (대략 적어주셔도 괜찮아요, 아무것도 적지 않은 채로 스킵도
-                  가능합니다!)
+                  (대략 적어주셔도 괜찮아요, 답변을 원하지 않으시면 0,0을
+                  입력해주세요!)
                 </div>
                 <div className='numberTextOne'>
                   총 인원 :{' '}
