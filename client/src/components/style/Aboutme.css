@@ -1,7 +1,7 @@
 .aboutme {
   padding-top: 15vh;
   font-size: 16px;
-  height: 87vh;
+  height: 88vh;
 }
 
 .flex-parent {
@@ -102,7 +102,7 @@ input::before {
   padding: 1vh 2vw;
   border-radius: 10px;
   width: 70%;
-  max-width: 500px;
+  max-width: 530px;
   height: 10vh;
   max-height: 70px;
   background-color: whitesmoke;
